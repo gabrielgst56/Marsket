@@ -1,4 +1,34 @@
-# MarksetFrontend
+Olá, abaixo estão os passos para a execução do projeto, antes de tudo é necessário que você tenha o Node instalado, junto ao npm (na maioria das vezes ele já é instalado junto ao Node). 
+
+1 - Clone o projeto para seu diretório local.
+
+2 - Abra um terminal através de sua IDE ou de seu sistema operacional e vá até o diretório.
+
+3 - Digite a função "npm install" para instalar os pacotes que complementam o projeto, eles são necessários para sua execução!
+
+4 - Caso a instalação seja sucesso, você pode executar um "npm run electron" para que o projeto se inicie.
+
+
+Adeus! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# marsketFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
 

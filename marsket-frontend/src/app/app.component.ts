@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +7,16 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  
+
   title = 'Marsket';
 
-  constructor(private router:Router){
+  constructor(private router: Router) {
 
   }
 
 
   ngOnInit() {
-    this.router.navigate(['home']);
+    this.router.navigate(['login']);
   }
 
 }

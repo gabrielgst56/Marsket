@@ -5,13 +5,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/service")
-public class HelloWorld {
+@Path("/customer")
+public class CustomerController {
 
 	@GET
 	@Path("/list")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String sayHelloWorld(){
-		return "Hello World";
+		return "Hello Customer";
 	}
 }

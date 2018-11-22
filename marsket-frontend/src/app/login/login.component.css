@@ -1,0 +1,28 @@
+.login-holder {
+    height: 100vh;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    padding: 100px
+}
+
+.content{
+    max-width: 400px;
+    max-height: 400px;
+    padding: 30px;    
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border-bottom: 7px solid #33a4c9;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.loginButton {
+    background: linear-gradient(to right, #02aab0, #00cdac);
+}
+
+@keyframes example {
+    from {background-color: #3f2b96;}
+    to {background-color: #11998e;}
+}

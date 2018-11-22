@@ -7,22 +7,19 @@ import { User } from '../models/user';
 })
 export  class  UserService {
 
-
   public user: User;
 
-  API_URL  =  '../api/';
+  API_URL  =  'localhost:8080/marsket-backend/rest/';
 
   constructor(private  httpClient:  HttpClient) {}
 
+  getLogin(user: User): any {
+    const params = new HttpParams().set('username', this.user.Login).set('password', this.user.Password);
 
-  searchUser(user: User) {
-
-    const params = new HttpParams().set('login', this.user.Login).set('password', this.user.Password);
-
-    return  this.httpClient.get(`${this.API_URL}book/list`, {params});
+    return this.httpClient.get(`${this.API_URL}user/login`, {params});
   }
 
   addUser(user: User) {
-    return this.httpClient.post(`${this.API_URL}book/add`, user);
+    return this.httpClient.post(`${this.API_URL}user/add`, user);
   }
 }

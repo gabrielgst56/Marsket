@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
 
     this.userService.getLogin(user)
     .subscribe( data => {
-      debugger;
       if(data == true){
         this.router.navigate(['homepage']);
       }      

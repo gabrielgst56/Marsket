@@ -5,8 +5,19 @@ public class Product {
 	private int id;
 	private String barCode;
 	private String name;
-	private Double cost;
-	private boolean sale;
+	private Double price;
+	private int quantity;
+	private boolean haveDiscount;
+	
+	public Product(int id, String barCode, String name, Double price, int quantity, boolean haveDiscount) {
+		
+		this.id = id;
+		this.barCode = barCode;
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+		this.haveDiscount = haveDiscount;
+	}
 	
 	public int getId() {
 		return id;
@@ -26,17 +37,22 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Double getCost() {
-		return cost;
+	public Double getPrice() {
+		return price;
 	}
-	public void setCost(Double cost) {
-		this.cost = cost;
+	public void setPrice(Double price) {
+		this.price = price;
 	}
-	public boolean isSale() {
-		return sale;
+	public int getQuantity() {
+		return quantity;
 	}
-	public void setSale(boolean sale) {
-		this.sale = sale;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}	
+	public boolean getHaveDiscount() {
+		return haveDiscount;
 	}
-	
+	public void setHaveDiscount(boolean haveDiscount) {
+		this.haveDiscount = haveDiscount;
+	}
 }

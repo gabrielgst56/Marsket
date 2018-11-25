@@ -1,6 +1,6 @@
 package br.com.marsket.util;
 
-public enum UserType {
+public enum UserTypeEnum {
 
 	CUSTOMER, EMPLOYEE
 }

@@ -1,29 +1,36 @@
 package br.com.marsket.model;
 
-import br.com.marsket.util.UserType;
+import br.com.marsket.util.UserTypeEnum;
 
 public class User {
 
-	private String login;
-	private String passworld;
-	private UserType userType;
+	private String username;
+	private String password;
+	private UserTypeEnum userType;
 	
-	public String getLogin() {
-		return login;
+	public User(String username, String password, UserTypeEnum userType) {
+		
+		this.username = username;
+		this.password = password;
+		this.userType = userType;		
 	}
-	public void setLogin(String login) {
-		this.login = login;
+	
+	public String getUsername() {
+		return username;
 	}
-	public String getPassworld() {
-		return passworld;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public void setPassworld(String passworld) {
-		this.passworld = passworld;
+	public String getPassword() {
+		return password;
 	}
-	public UserType getUserType() {
+	public void setPassword(String passworld) {
+		this.password = passworld;
+	}
+	public UserTypeEnum getUserType() {
 		return userType;
 	}
-	public void setUserType(UserType userType) {
+	public void setUserType(UserTypeEnum userType) {
 		this.userType = userType;
 	}
 	

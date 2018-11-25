@@ -9,17 +9,17 @@ export  class  UserService {
 
   public user: User;
 
-  API_URL  =  'localhost:8080/marsket-backend/rest/';
+  API_URL  =  'http://localhost:4200/api/marsket-backend/rest/';
 
   constructor(private  httpClient:  HttpClient) {}
 
   getLogin(user: User): any {
-    const params = new HttpParams().set('username', this.user.Login).set('password', this.user.Password);
 
-    return this.httpClient.get(`${this.API_URL}user/login`, {params});
+    return this.httpClient.get(`${this.API_URL}user/login/${user.Login}/${user.Password}`);
   }
 
   addUser(user: User) {
+    
     return this.httpClient.post(`${this.API_URL}user/add`, user);
   }
 }

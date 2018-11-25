@@ -19,7 +19,6 @@ public class StaticRepository {
 	static ArrayList<Product> listProduct;
 	
 	public static void Init() {
-		listUser = new ArrayList<>(Arrays.asList(new User(), new User()));
 		listCustomer = new ArrayList<>();
 		listEmployee = new ArrayList<>();
 		listProduct = new ArrayList<>();

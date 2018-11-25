@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
   get f() { return this.loginForm.controls; }
 
   onSubmit() {
-    debugger;
     this.submitted = true;
 
     if (this.loginForm.invalid) {
@@ -46,7 +45,10 @@ export class LoginComponent implements OnInit {
 
     this.userService.getLogin(user)
     .subscribe( data => {
-      this.router.navigate(['list-product']);
+      debugger;
+      if(data == true){
+        this.router.navigate(['homepage']);
+      }      
     });
   }
 

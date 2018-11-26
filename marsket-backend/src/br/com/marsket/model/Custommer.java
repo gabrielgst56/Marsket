@@ -1,9 +1,10 @@
 package br.com.marsket.model;
 
-public class Customer extends People {
+public class Custommer extends People {
 
 	private int id;
 	private int top;
+	private boolean haveDiscount;
 	
 	public int getId() {
 		return id;
@@ -17,6 +18,11 @@ public class Customer extends People {
 	public void setTop(int top) {
 		this.top = top;
 	}
-	
+	public boolean getHaveDiscount() {
+		return haveDiscount;
+	}
+	public void setHaveDiscount(boolean haveDiscount) {
+		this.haveDiscount = haveDiscount;
+	}
 	
 }

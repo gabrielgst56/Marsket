@@ -22,7 +22,7 @@
       <td>{{product.name}}</td>
       <td>{{'R$' + product.price}}</td>
       <td>{{product.quantity}}</td>
-      <td>{{product.haveDiscount ? 'Sim' : 'Não'}}</td>
+      <td>{{product.haveDiscount ? 'Yes' : 'No'}}</td>
       <td><button class="btn" (click)="deleteProduct(product)"> Delete</button>
         <button class="btn" (click)="editProduct(product)" style="margin-left: 20px;"> Edit</button></td>
     </tr>

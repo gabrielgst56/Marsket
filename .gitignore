@@ -2,3 +2,4 @@
 node_modules/
 /.metadata/
 marsket-backend/nb-configuration.xml
+marsket-backend/.classpath

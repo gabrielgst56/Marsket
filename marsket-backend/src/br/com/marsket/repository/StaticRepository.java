@@ -13,8 +13,8 @@ public class StaticRepository {
     public static ArrayList<User> listUser = new ArrayList<User>() {
         {
             add(new User("renan", "123", UserTypeEnum.ADMIN));
-            add(new User("renan", "123", UserTypeEnum.ADMIN));
-            add(new User("renan", "123", UserTypeEnum.ADMIN));
+            add(new User("pedro", "123", UserTypeEnum.ADMIN));
+            add(new User("gabriel", "123", UserTypeEnum.ADMIN));
         }
     };
 

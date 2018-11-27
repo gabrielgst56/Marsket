@@ -41,7 +41,7 @@ export class HomepageComponent implements OnInit {
   }
   
   public addCustommer() : void{
-    this.router.navigate(['add-custommer']);
+    this.router.navigate(['add-customer']);
   }
 
 }

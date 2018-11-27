@@ -7,14 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { AddCustommerComponent } from './add-custommer/add-custommer.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomepageComponent,
-    AddCustommerComponent
+    AddCustomerComponent
   ],
   imports: [
     FormsModule,

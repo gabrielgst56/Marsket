@@ -13,13 +13,7 @@ export  class  CustomerService {
 
   constructor(private  httpClient:  HttpClient) {}
 
-  getLogin(customer : Customer): any {
-
-    //return this.httpClient.get(`${this.API_URL}user/login/${user.Login}/${user.Password}`);
-  }
-
-  addUser(customer : Customer) {
-    
-    //return this.httpClient.post(`${this.API_URL}user/add`, user);
+  addCustomer(customer : Customer) {
+    return this.httpClient.post(`${this.API_URL}customer/add`, customer);
   }
 }

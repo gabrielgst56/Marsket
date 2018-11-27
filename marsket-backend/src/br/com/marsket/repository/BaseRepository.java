@@ -8,9 +8,9 @@ public interface BaseRepository<Model> {
 	
 	Model getObject(int id);
 	
-	boolean insert(Model m);
+	void insert(Model m);
 
-	boolean update(Model m);
+	void update(Model m);
 
-	boolean delete(int id);
+	void delete(int id);
 }

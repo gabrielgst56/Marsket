@@ -31,21 +31,18 @@ public class ProductRepository implements BaseRepository<Product>{
 	}
 
 	@Override
-	public boolean insert(Product m) {
+	public void insert(Product m) {
 		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override
-	public boolean update(Product m) {
+	public void update(Product m) {
 		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override
-	public boolean delete(int id) {
+	public void delete(int id) {
 		// TODO Auto-generated method stub
-		return false;
 	}
 
 }

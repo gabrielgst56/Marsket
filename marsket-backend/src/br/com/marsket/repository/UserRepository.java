@@ -33,21 +33,18 @@ public class UserRepository implements BaseRepository<User> {
 	}
 
 	@Override
-	public boolean insert(User m) {
+	public void insert(User m) {
 		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override
-	public boolean update(User m) {
+	public void update(User m) {
 		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override
-	public boolean delete(int id) {
+	public void delete(int id) {
 		// TODO Auto-generated method stub
-		return false;
 	}
 
 	public boolean getLogin(String username, String password) {

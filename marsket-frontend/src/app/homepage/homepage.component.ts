@@ -40,7 +40,7 @@ export class HomepageComponent implements OnInit {
     this.router.navigate(['add-product']);
   }
   
-  public addCustommer() : void{
+  public addCustomer(){
     this.router.navigate(['add-customer']);
   }
 

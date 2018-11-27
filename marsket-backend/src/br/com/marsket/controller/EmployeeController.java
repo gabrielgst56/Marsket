@@ -7,11 +7,11 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/employee")
 public class EmployeeController {
-	
-	@GET
-	@Path("/list")
-	@Produces(MediaType.TEXT_PLAIN)
-	public String sayHelloWorld(){
-		return "Hello Employee";
-	}
+
+    @GET
+    @Path("/list")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String sayHelloWorld() {
+        return "Hello Employee";
+    }
 }

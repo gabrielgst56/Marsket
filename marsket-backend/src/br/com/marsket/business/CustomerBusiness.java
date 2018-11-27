@@ -7,10 +7,11 @@ import br.com.marsket.repository.CustomerRepository;
 
 public class CustomerBusiness {
 
-	public void AddCustomer(Customer customer){
-		new CustomerRepository().insert(customer);
-	}
-	public ArrayList<Customer> getCustomers(){
-		return new CustomerRepository().getAll();
-	}
+    public void AddCustomer(Customer customer) {
+        new CustomerRepository().insert(customer);
+    }
+
+    public ArrayList<Customer> getCustomers() {
+        return new CustomerRepository().getAll();
+    }
 }

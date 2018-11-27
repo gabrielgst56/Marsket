@@ -17,15 +17,15 @@ import br.com.marsket.model.Product;
 
 @Path("/product")
 public class ProductController {
-	
-	@GET
-	@Path("/list")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getProducts(){
-		
-		String response = new Gson().toJson(new ProductBusiness().getProducts());
-		
-		return Response.status(200).entity(response).build();
-				
-	}
+
+    @GET
+    @Path("/list")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getProducts() {
+
+        String response = new Gson().toJson(new ProductBusiness().getProducts());
+
+        return Response.status(200).entity(response).build();
+
+    }
 }

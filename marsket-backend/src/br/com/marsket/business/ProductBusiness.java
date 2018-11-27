@@ -7,8 +7,8 @@ import br.com.marsket.repository.ProductRepository;
 
 public class ProductBusiness {
 
-	public ArrayList<Product> getProducts() {
-		
-		return new ProductRepository().getAll();
-	}
+    public ArrayList<Product> getProducts() {
+
+        return new ProductRepository().getAll();
+    }
 }

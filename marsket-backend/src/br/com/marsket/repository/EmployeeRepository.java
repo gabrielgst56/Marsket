@@ -32,7 +32,9 @@ public class EmployeeRepository implements BaseRepository<Employee> {
     @Override
     public void insert(Employee m) {
         if (!StaticRepository.listEmployee.isEmpty()) {
-            m.setId(StaticRepository.listEmployee.get(StaticRepository.listEmployee.size() - 1).getId() + 1);
+            m.setId(StaticRepository.listEmployee.getLast().getId() + 1);
+        } else {
+            m.setId(0);
         }
         StaticRepository.listEmployee.add(m);
     }
@@ -42,6 +44,7 @@ public class EmployeeRepository implements BaseRepository<Employee> {
         for (int i = 0; i < StaticRepository.listEmployee.size(); i++) {
             if (StaticRepository.listEmployee.get(i).getId() == m.getId()) {
                 StaticRepository.listEmployee.set(i, m);
+                break;
             }
         }
     }
@@ -51,6 +54,7 @@ public class EmployeeRepository implements BaseRepository<Employee> {
         for (int i = 0; i < StaticRepository.listEmployee.size(); i++) {
             if (StaticRepository.listEmployee.get(i).getId() == id) {
                 StaticRepository.listEmployee.remove(i);
+                break;
             }
         }
     }

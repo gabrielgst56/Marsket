@@ -1,17 +1,16 @@
 package br.com.marsket.repository;
 
-import java.util.ArrayList;
-
 import br.com.marsket.model.User;
 import br.com.marsket.util.UserTypeEnum;
+import java.util.LinkedList;
 
 public class UserRepository implements BaseRepository<User> {
 
-    public ArrayList<User> Users;
+    public LinkedList<User> Users;
 
     public UserRepository() {
 
-        this.Users = new ArrayList<>();
+        this.Users = new LinkedList<>();
         this.Users.add(new User("gabriel", "123", UserTypeEnum.EMPLOYEE));
         this.Users.add(new User("renan", "123", UserTypeEnum.EMPLOYEE));
         this.Users.add(new User("pedro", "123", UserTypeEnum.EMPLOYEE));
@@ -19,7 +18,7 @@ public class UserRepository implements BaseRepository<User> {
     }
 
     @Override
-    public ArrayList<User> getAll() {
+    public LinkedList<User> getAll() {
         // TODO Auto-generated method stub
         return null;
     }

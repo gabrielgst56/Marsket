@@ -1,16 +1,15 @@
 package br.com.marsket.repository;
 
-import java.util.ArrayList;
-
 import br.com.marsket.model.Product;
+import java.util.LinkedList;
 
 public class ProductRepository implements BaseRepository<Product> {
 
-    public ArrayList<Product> Products;
+    public LinkedList<Product> Products;
 
     public ProductRepository() {
 
-        Products = new ArrayList<>();
+        Products = new LinkedList<>();
 
         Products.add(new Product(0, "12421421", "Farinha", 10.99, 10, true));
         Products.add(new Product(1, "21345234", "Óleo", 12.99, 15, true));
@@ -19,7 +18,7 @@ public class ProductRepository implements BaseRepository<Product> {
     }
 
     @Override
-    public ArrayList<Product> getAll() {
+    public LinkedList<Product> getAll() {
 
         return this.Products;
     }

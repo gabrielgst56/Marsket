@@ -1,10 +1,10 @@
 package br.com.marsket.repository;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public interface BaseRepository<Model> {
 
-    ArrayList<Model> getAll();
+    LinkedList<Model> getAll();
 
     Model getObject(int id);
 

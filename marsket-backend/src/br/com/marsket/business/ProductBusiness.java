@@ -1,13 +1,12 @@
 package br.com.marsket.business;
 
-import java.util.ArrayList;
-
 import br.com.marsket.model.Product;
 import br.com.marsket.repository.ProductRepository;
+import java.util.LinkedList;
 
 public class ProductBusiness {
 
-    public ArrayList<Product> getProducts() {
+    public LinkedList<Product> getProducts() {
 
         return new ProductRepository().getAll();
     }

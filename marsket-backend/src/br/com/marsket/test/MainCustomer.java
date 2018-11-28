@@ -1,29 +1,46 @@
 package br.com.marsket.test;
 
-import br.com.marsket.controller.CustomerController;
 import br.com.marsket.controller.EmployeeController;
 import br.com.marsket.repository.StaticRepository;
+import com.google.gson.Gson;
 
 public class MainCustomer {
 
     public static void main(String[] args) {
 
-        new CustomerController().addCustomer(StaticRepository.listCustomer.get(1));
-
         StaticRepository.listEmployee.forEach((c) -> {
             System.out.println(c.getId() + " " + c.getFirstName());
         });
 
-        new EmployeeController().addEmployees(StaticRepository.listEmployee.get(1));
+        System.out.println("\n<");
+        System.out.println(new EmployeeController().addEmployees(new Gson().toJson(StaticRepository.listEmployee.get(1))).getEntity());
+        System.out.println(">\n");
+        StaticRepository.listEmployee.forEach((c) -> {
+            System.out.println(c.getId() + " " + c.getFirstName());
+        });
+
+        System.out.println("\n<");
+        StaticRepository.listEmployee.get(1).setFirstName("Jason");
+        System.out.println(new EmployeeController().attEmployees(new Gson().toJson(StaticRepository.listEmployee.get(1))).getEntity());
+        System.out.println(">\n");
+        StaticRepository.listEmployee.forEach((c) -> {
+            System.out.println(c.getId() + " " + c.getFirstName());
+        });
+
+        System.out.println("\n<");
+        System.out.println(new EmployeeController().delEmployees(1).getStatus());
+        System.out.println(">\n");
+        StaticRepository.listEmployee.forEach((c) -> {
+            System.out.println(c.getId() + " " + c.getFirstName());
+        });
+
         System.out.println("\n");
+        System.out.println(new EmployeeController().getEmployee(2).getEntity());
 
-        StaticRepository.listEmployee.forEach((c) -> {
-            System.out.println(c.getId() + " " + c.getFirstName());
-        });
+        System.out.println("\n");
+        System.out.println(new EmployeeController().getAllEmployees());
 
-        System.out.println(new EmployeeController().getEmployees().getEntity().toString());
-
-        System.out.println("Test");
+        System.out.println("\n");
     }
 
 }

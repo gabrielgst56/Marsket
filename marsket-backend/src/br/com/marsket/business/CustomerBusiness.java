@@ -1,9 +1,8 @@
 package br.com.marsket.business;
 
-import java.util.ArrayList;
-
 import br.com.marsket.model.Customer;
 import br.com.marsket.repository.CustomerRepository;
+import java.util.LinkedList;
 
 public class CustomerBusiness {
 
@@ -11,7 +10,7 @@ public class CustomerBusiness {
         new CustomerRepository().insert(customer);
     }
 
-    public ArrayList<Customer> getCustomers() {
+    public LinkedList<Customer> getCustomers() {
         return new CustomerRepository().getAll();
     }
 }

@@ -1,13 +1,12 @@
 package br.com.marsket.repository;
 
-import java.util.ArrayList;
-
 import br.com.marsket.model.Customer;
+import java.util.LinkedList;
 
 public class CustomerRepository implements BaseRepository<Customer> {
 
     @Override
-    public ArrayList<Customer> getAll() {
+    public LinkedList<Customer> getAll() {
         return StaticRepository.listCustomer;
     }
 

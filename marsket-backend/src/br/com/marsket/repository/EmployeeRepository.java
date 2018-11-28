@@ -6,7 +6,7 @@
 package br.com.marsket.repository;
 
 import br.com.marsket.model.Employee;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  *
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class EmployeeRepository implements BaseRepository<Employee> {
 
     @Override
-    public ArrayList<Employee> getAll() {
+    public LinkedList<Employee> getAll() {
         return StaticRepository.listEmployee;
     }
 

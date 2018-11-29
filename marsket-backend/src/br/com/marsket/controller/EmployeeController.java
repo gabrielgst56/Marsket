@@ -28,14 +28,14 @@ public class EmployeeController {
     public String HelloWorld() {
         return "Hello World";
     }
-    
+
     @GET
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllEmployees() {
         try {
-	        String response = new Gson().toJson(new EmployeeBusiness().getEmployees());
-	        return Response.status(200).entity(response).build();
+            String response = new Gson().toJson(new EmployeeBusiness().getEmployees());
+            return Response.status(200).entity(response).build();
         } catch (Exception ex) {
             return Response.serverError().status(400).build();
         }
@@ -54,9 +54,7 @@ public class EmployeeController {
     }
 
     @POST
-    @Path("/add")
     @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
     public Response addEmployees(@PathParam("employee") String jsonEmployee) {
         try {
             new EmployeeBusiness().AddEmployee(new Gson().fromJson(jsonEmployee, Employee.class));
@@ -67,9 +65,7 @@ public class EmployeeController {
     }
 
     @PUT
-    @Path("/att")
     @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
     public Response attEmployees(@PathParam("employee") String jsonEmployee) {
         try {
             new EmployeeBusiness().updateEmployee(new Gson().fromJson(jsonEmployee, Employee.class));

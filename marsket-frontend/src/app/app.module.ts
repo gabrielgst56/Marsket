@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { AddEmployeeComponent } from './employee/add-employee.component';
+import { ListEmployeeComponent } from './employee/list-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomepageComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    AddEmployeeComponent,
+    ListEmployeeComponent
   ],
   imports: [
     FormsModule,

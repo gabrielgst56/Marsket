@@ -1,0 +1,31 @@
+<div class="list-employee-holder">
+    <div class="content">
+      <h2> Products</h2>
+      <br>
+      <button class="btn" style="display:inline-block;" (click)="addEmployee()">Add Employee</button> <br>
+      <br>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.salary}}</td>
+            <td></td>
+            <td>
+              <button class="btn" (click)="deleteEmployee(employee)">Delete</button>
+              <button class="btn" (click)="editEmployee(employee)" style="margin-left: 20px;">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

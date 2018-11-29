@@ -13,7 +13,7 @@ export  class  CustomerService {
 
   constructor(private  httpClient:  HttpClient) {}
 
-  addCustomer(customer : Customer) {
+  addCustomer(customer: Customer) {
     return this.httpClient.post(`${this.API_URL}customer/add`, customer);
   }
 }

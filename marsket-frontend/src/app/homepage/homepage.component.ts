@@ -44,4 +44,8 @@ export class HomepageComponent implements OnInit {
     this.router.navigate(['add-customer']);
   }
 
+  public listEmployee() {
+    this.router.navigate(['list-employee']);
+  }
+
 }

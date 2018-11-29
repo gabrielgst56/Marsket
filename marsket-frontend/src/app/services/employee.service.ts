@@ -5,19 +5,19 @@ import { Employee } from '../models/employee';
 @Injectable({
   providedIn: 'root'
 })
-export  class  EmployeeService {
+export class EmployeeService {
 
   public employee: Employee;
 
   API_URL = 'http://localhost:4200/api/marsket-backend/rest/';
 
-  constructor(private  httpClient:  HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
-  listEmployees(){
+  listEmployees() {
     return this.httpClient.get(`${this.API_URL}employee/list`);
   }
 
-  addEmployee(employee: Employee){
+  addEmployee(employee: Employee) {
     return this.httpClient.post(`${this.API_URL}employee/add`, employee);
   }
 

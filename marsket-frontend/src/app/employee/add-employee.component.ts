@@ -11,18 +11,19 @@ import { Employee } from '../models/employee';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private employeeService: EmployeeService) { 
+  constructor(private formBuilder: FormBuilder, private router: Router, private employeeService: EmployeeService) {
 
   }
 
   submitted = false;
   employee: Employee;
   employeeAddForm: FormGroup;
-  
+
   ngOnInit() {
     this.employeeAddForm = this.formBuilder.group({
       cpf: ['', Validators.required],
-      name: ['', Validators.required]
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required]
     });
   }
 
@@ -31,11 +32,11 @@ export class AddEmployeeComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    if (this.employeeAddForm.invalid){
+    if (this.employeeAddForm.invalid) {
       return;
     }
 
-   
+
   }
 
 }

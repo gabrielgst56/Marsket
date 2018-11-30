@@ -3,6 +3,10 @@ package br.com.marsket.repository;
 import br.com.marsket.model.Customer;
 import java.util.LinkedList;
 
+/**
+*
+* @author Renan Campregher
+*/
 public class CustomerRepository implements BaseRepository<Customer> {
 
     @Override
@@ -12,24 +16,42 @@ public class CustomerRepository implements BaseRepository<Customer> {
 
     @Override
     public Customer getObject(int id) {
+    	for (Customer customer : StaticRepository.listCustomer) {
+            if (customer.getId() == id) {
+                return customer ;
+            }
+        }
         return null;
     }
 
     @Override
     public void insert(Customer m) {
-        // Another way is to use a for each in the list to get the biggest id then sum +1 to add the new customer
-        if (!StaticRepository.listCustomer.isEmpty()) {}
+    	if (!StaticRepository.listCustomer.isEmpty()) {
+            m.setId(StaticRepository.listCustomer.getLast().getId() + 1);
+        } else {
+            m.setId(0);
+        }
         StaticRepository.listCustomer.add(m);
     }
 
     @Override
     public void update(Customer m) {
-        // TODO Auto-generated method stub
+    	for (int i = 0; i < StaticRepository.listCustomer.size(); i++) {
+            if (StaticRepository.listCustomer.get(i).getId() == m.getId()) {
+                StaticRepository.listCustomer.set(i, m);
+                break;
+            }
+        }
     }
 
     @Override
     public void delete(int id) {
-        // TODO Auto-generated method stub
+    	 for (int i = 0; i < StaticRepository.listCustomer.size(); i++) {
+             if (StaticRepository.listCustomer.get(i).getId() == id) {
+                 StaticRepository.listCustomer.remove(i);
+                 break;
+             }
+         }
     }
 
 }

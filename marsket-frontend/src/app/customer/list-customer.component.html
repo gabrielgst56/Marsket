@@ -1,0 +1,27 @@
+<div class="list-customer-holder">
+  <div class="content">
+    <h2>Customers</h2>
+    <br>
+    <button class="btn" style="display:inline-block;" (click)="addCustomer()">Add Customer</button> <br>
+    <br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.cpf}}</td>
+          <td></td>
+          <td>
+            <button class="btn" (click)="delCustomer(customer)">Delete</button>
+            <button class="btn" (click)="attCustomer(customer)" style="margin-left: 20px;">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

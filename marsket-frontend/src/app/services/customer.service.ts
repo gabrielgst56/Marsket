@@ -13,7 +13,23 @@ export  class  CustomerService {
 
   constructor(private  httpClient:  HttpClient) {}
 
+  listCustomers() {
+    return this.httpClient.get(`${this.API_URL}customer/list`);
+  }
+
+  getCustomer(id: number) {
+    return this.httpClient.get(`${this.API_URL}customer/get/` + id);
+  }
+
   addCustomer(customer: Customer) {
-    return this.httpClient.put(`${this.API_URL}customer/add`, customer, {headers:{'Content-Type': 'application/json'}});
+    return this.httpClient.post(`${this.API_URL}customer/add`, customer, { headers: { 'Content-Type': 'application/json' } });
+  }
+
+  attCustomer(customer: Customer) {
+    return this.httpClient.put(`${this.API_URL}customer/edit`, customer, { headers: { 'Content-Type': 'application/json' } });
+  }
+
+  delCustomer(id: number) {
+    return this.httpClient.delete(`${this.API_URL}customer/del/` + id);
   }
 }

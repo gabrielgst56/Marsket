@@ -1,21 +1,18 @@
 package br.com.marsket.model;
 
-public class Customer {
+public class Customer extends People {
 
+	private int id;
     private boolean haveDiscount;
-    private String firstName;
-    private String lastName;
-    private String cpf;
 
     public Customer() {
     	
     }
     
-    public Customer(boolean haveDiscount, String firstName, String lastName, String cpf) {
-        this.haveDiscount = haveDiscount;
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setCpf(cpf);
+    public Customer(int id, boolean haveDiscount, String firstName, String lastName, String cpf) {
+    	super(firstName, lastName, cpf);
+    	this.haveDiscount = haveDiscount;
+    	this.id = id;
     }
 
     public void setHaveDiscount(boolean haveDiscount) {
@@ -26,28 +23,17 @@ public class Customer {
         return haveDiscount;
     }
 
-	public String getFirstName() {
-		return firstName;
+	public int getId() {
+		return id;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setId(int id) {
+		this.id = id;
 	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+	
+    @Override
+    public String toString() {
+        return "Employee{" + "id=" + id + ", haveDiscount=" + haveDiscount + '}';
+    }
 
 }

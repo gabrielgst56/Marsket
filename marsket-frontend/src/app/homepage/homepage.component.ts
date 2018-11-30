@@ -40,8 +40,8 @@ export class HomepageComponent implements OnInit {
     this.router.navigate(['add-product']);
   }
 
-  public addCustomer() {
-    this.router.navigate(['add-customer']);
+  public listCustomer() {
+    this.router.navigate(['list-customer']);
   }
 
   public listEmployee() {

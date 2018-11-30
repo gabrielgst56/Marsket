@@ -6,6 +6,7 @@ import { AddCustomerComponent } from './customer/add-customer.component';
 import { AddEmployeeComponent } from './employee/add-employee.component';
 import { ListEmployeeComponent } from './employee/list-employee.component';
 import { AddProductComponent } from './product/add-product.component';
+import { ListCustomerComponent } from './customer/list-customer.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -32,6 +33,10 @@ const routes: Routes = [
     {
         path: 'add-product',
         component: AddProductComponent
+    },
+    {
+        path: 'list-customer',
+        component: ListCustomerComponent
     }
 ];
 

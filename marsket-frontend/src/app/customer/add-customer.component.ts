@@ -48,7 +48,8 @@ export class AddCustomerComponent implements OnInit {
       this.addForm.value.firstName,
       this.addForm.value.lastName,
       this.addForm.value.cpf,
-      this.addForm.value.discount
+      this.addForm.value.discount,
+      this.addForm.value.id
     );
 
     this.customerService.addCustomer(customer)

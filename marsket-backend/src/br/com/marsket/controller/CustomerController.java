@@ -1,10 +1,13 @@
 package br.com.marsket.controller;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Request;
 
 import br.com.marsket.model.Customer;
 import br.com.marsket.business.CustomerBusiness;
@@ -27,16 +30,13 @@ public class CustomerController {
 
     @POST
     @Path("/add")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
     public String addCustomer(Customer customer) {
-
-        /*
-		 * Change the return to response
-		 * Case right return 200
-		 * Case wrong return 400*/
         try {
-            new CustomerBusiness().AddCustomer(customer);
-            return "";
+        	
+            //new CustomerBusiness().AddCustomer(customer);
+            return customer.getFirstName()+"";
         } catch (Exception ex) {
             return "";
         }

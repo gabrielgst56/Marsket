@@ -17,26 +17,47 @@ export class AddEmployeeComponent implements OnInit {
 
   submitted = false;
   employee: Employee;
-  employeeAddForm: FormGroup;
+  addForm: FormGroup;
 
   ngOnInit() {
-    this.employeeAddForm = this.formBuilder.group({
-      cpf: ['', Validators.required],
+    this.addForm = this.formBuilder.group({
       firstName: ['', Validators.required],
-      lastName: ['', Validators.required]
+      lastName: ['', Validators.required],
+      cpf: ['', Validators.required],
+      salary: ['', Validators.required]
     });
   }
 
-  get f() { return this.employeeAddForm.controls; }
+  get f() { return this.addForm.controls; }
 
   onSubmit() {
     this.submitted = true;
 
-    if (this.employeeAddForm.invalid) {
+    if (this.addForm.invalid) {
       return;
     }
 
+    if (this.addForm.value.discount == null) {
+      this.addForm.value.discount = false;
+    }
 
+    const employee: Employee = new Employee(
+      this.addForm.value.id,
+      this.addForm.value.firstName,
+      this.addForm.value.lastName,
+      this.addForm.value.cpf,
+      this.addForm.value.salary
+    );
+
+    this.employeeService.addEmployee(employee)
+      .subscribe(data => {
+        this.router.navigate(['homepage']);
+      });
   }
+
+  return() {
+    this.router.navigate(['list-employee']);
+  }
+
 
 }

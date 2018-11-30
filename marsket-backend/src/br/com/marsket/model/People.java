@@ -6,6 +6,9 @@ public class People {
     private String lastName;
     private String cpf;
 
+    public People() {
+    }
+
     public People(String firstName, String lastName, String cpf) {
         this.firstName = firstName;
         this.lastName = lastName;

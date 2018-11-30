@@ -5,6 +5,9 @@ public class Employee extends People {
     private int id;
     private Double salary;
 
+    public Employee() {
+    }
+
     public Employee(int id, Double salary, String firstName, String lastName, String cpf) {
         super(firstName, lastName, cpf);
         this.id = id;

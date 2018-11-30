@@ -25,8 +25,8 @@ export class ListEmployeeComponent implements OnInit {
             })
     }
 
-    public deleteEmployee(employee: Employee): void {
-        this.employeesService.deleteEmployee(employee)
+    public delEmployee(employee: Employee): void {
+        this.employeesService.delEmployee(employee.id)
             .subscribe(data => {
                 this.getEmployees();
             })

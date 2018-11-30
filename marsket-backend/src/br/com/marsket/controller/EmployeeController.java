@@ -43,7 +43,7 @@ public class EmployeeController {
 
     @GET
     @Path("/get/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
     public Response getEmployee(@PathParam("id") int id) {
         try {
             String response = new GsonBuilder().setPrettyPrinting().create().toJson(new EmployeeBusiness().getEmployee(id));
@@ -54,21 +54,25 @@ public class EmployeeController {
     }
 
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response addEmployees(@PathParam("employee") String jsonEmployee) {
+    @Path("/add")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response addEmployees(Employee employee) {
         try {
-            new EmployeeBusiness().AddEmployee(new Gson().fromJson(jsonEmployee, Employee.class));
+            new EmployeeBusiness().AddEmployee(employee);
             return Response.ok().status(Status.OK).build();
-        } catch (JsonSyntaxException ex) {
+        } catch (Exception ex) {
             return Response.serverError().status(400).build();
         }
     }
 
     @PUT
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response attEmployees(@PathParam("employee") String jsonEmployee) {
+    @Path("/att")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response attEmployees(Employee employee) {
         try {
-            new EmployeeBusiness().updateEmployee(new Gson().fromJson(jsonEmployee, Employee.class));
+            new EmployeeBusiness().updateEmployee(employee);
             return Response.ok().status(Status.OK).build();
         } catch (JsonSyntaxException ex) {
             return Response.serverError().status(400).build();
@@ -77,8 +81,7 @@ public class EmployeeController {
 
     @DELETE
     @Path("/del/{id}")
-    @Produces(MediaType.APPLICATION_FORM_URLENCODED)
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
     public Response delEmployees(@PathParam("id") int id) {
         try {
             new EmployeeBusiness().removeEmployee(id);

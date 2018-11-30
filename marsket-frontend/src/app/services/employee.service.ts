@@ -17,15 +17,19 @@ export class EmployeeService {
     return this.httpClient.get(`${this.API_URL}employee/list`);
   }
 
+  getEmployee(id: number) {
+    return this.httpClient.get(`${this.API_URL}employee/get/` + id);
+  }
+
   addEmployee(employee: Employee) {
-    return this.httpClient.post(`${this.API_URL}employee/add`, employee);
+    return this.httpClient.post(`${this.API_URL}employee/add`, employee, { headers: { 'Content-Type': 'application/json' } });
   }
 
-  deleteEmployee(employee: Employee) {
-    return this.httpClient.post(`${this.API_URL}employee/remove`, employee);
+  attEmployee(employee: Employee) {
+    return this.httpClient.put(`${this.API_URL}employee/edit`, employee, { headers: { 'Content-Type': 'application/json' } });
   }
 
-  editEmployee(employee: Employee) {
-    return this.httpClient.post(`${this.API_URL}employee/edit`, employee);
+  delEmployee(id: number) {
+    return this.httpClient.delete(`${this.API_URL}employee/del/` + id);
   }
 }

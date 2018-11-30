@@ -37,11 +37,8 @@ export class AddEmployeeComponent implements OnInit {
       return;
     }
 
-    if (this.addForm.value.discount == null) {
-      this.addForm.value.discount = false;
-    }
-
     const employee: Employee = new Employee(
+      0,
       this.addForm.value.firstName,
       this.addForm.value.lastName,
       this.addForm.value.cpf,

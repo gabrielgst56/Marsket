@@ -10,7 +10,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AddCustomerComponent } from './customer/add-customer.component';
 import { AddEmployeeComponent } from './employee/add-employee.component';
 import { ListEmployeeComponent } from './employee/list-employee.component';
-import { ListCustomerComponent } from './list-customer/list-customer.component';
+import { ListCustomerComponent } from './customer/list-customer.component';
+import { AddProductComponent } from './product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { ListCustomerComponent } from './list-customer/list-customer.component';
     AddCustomerComponent,
     AddEmployeeComponent,
     ListEmployeeComponent,
-    ListCustomerComponent
+    ListCustomerComponent,
+    AddProductComponent
+    
   ],
   imports: [
     FormsModule,

@@ -3,30 +3,30 @@
     <h2 class="text-center">Add Employee</h2>
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <input type="firstName" formControlName="firstName" placeholder="First Name" firstName="firstName" class="form-control"
-          id="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+        <input type="text" formControlName="firstName" placeholder="First Name" firstName="firstName" class="form-control" id="firstName"
+          [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
         <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
           <div *ngIf="f.firstName.errors.required">First name is required</div>
         </div>
       </div>
 
       <div class="form-group">
-        <input type="lastName" formControlName="lastName" placeholder="Last Name" lastName="lastName" class="form-control"
-          id="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <input type="text" formControlName="lastName" placeholder="Last Name" lastName="lastName" class="form-control" id="lastName"
+          [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
         <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
           <div *ngIf="f.lastName.errors.required">Last name is required</div>
         </div>
       </div>
 
       <div class="form-group">
-        <input formControlName="cpf" placeholder="Cpf" name="cpf" class="form-control" id="cpf">
+        <input type="text" formControlName="cpf" placeholder="xxx.xxx.xxx-xx" name="CPF" class="form-control" id="cpf" [ngClass]="{ 'is-invalid': submitted && f.cpf.errors }">
         <div *ngIf="submitted && f.cpf.errors" class="invalid-feedback">
-          <div *ngIf="f.cpf.errors.required">Cpf is required</div>
+          <div *ngIf="f.cpf.errors.required">CPF is required</div>
         </div>
       </div>
 
       <div class="form-group">
-        <input formControlName="salary" placeholder="Salary" name="salary" class="form-control" id="salary">
+        <input type="number" formControlName="salary" placeholder="Salary" name="Salary" class="form-control" id="salary" [ngClass]="{ 'is-invalid': submitted && f.salary.errors }">
         <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
           <div *ngIf="f.salary.errors.required">Salary is required</div>
         </div>

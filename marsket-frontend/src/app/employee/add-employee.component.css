@@ -1,16 +1,12 @@
+
 .add-employee-holder {
-    height: 100vh;
     animation-name: example;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
-    padding: 100px
+    padding: 50px;
 }
 .content{
-    min-width: 70%;
-    max-width: 100%;
-    min-height: 70%;
-    max-height: 100%;
     padding: 3%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     margin: 5%;

@@ -1,9 +1,9 @@
-.list-employee-holder {
+.add-product-holder {
     animation-name: example;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
-    padding: 100px
+    padding: 50px;
 }
 
 .content{
@@ -14,4 +14,3 @@
     border-bottom: 7px solid #33a4c9;
     background: white;
 }
-

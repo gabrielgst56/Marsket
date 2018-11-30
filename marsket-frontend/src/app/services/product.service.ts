@@ -5,27 +5,32 @@ import { Product } from '../models/product';
 @Injectable({
   providedIn: 'root'
 })
-export  class  ProductService {
+export class ProductService {
 
   public product: Product;
 
-  API_URL  =  'http://localhost:4200/api/marsket-backend/rest/';
+  API_URL = 'http://localhost:4200/api/marsket-backend/rest/';
 
-  constructor(private  httpClient:  HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
-  listProducts(){
-    return  this.httpClient.get(`${this.API_URL}product/list`);
+  listProducts() {
+    return this.httpClient.get(`${this.API_URL}product/list`);
   }
 
-  addProduct(product: Product){
-    return this.httpClient.post(`${this.API_URL}product/add`, product);
+  getEmployee(id: number) {
+    return this.httpClient.get(`${this.API_URL}product/get/` + id);
   }
 
-  deleteProduct(product: Product) {
-    return this.httpClient.post(`${this.API_URL}product/remove`, product);
+  addProduct(product: Product) {
+    return this.httpClient.post(`${this.API_URL}product/add`, product, { headers: { 'Content-Type': 'application/json' } });
   }
 
   editProduct(product: Product) {
-    return this.httpClient.post(`${this.API_URL}product/edit`, product);
+    return this.httpClient.put(`${this.API_URL}product/edit`, product, { headers: { 'Content-Type': 'application/json' } });
   }
+
+  deleteProduct(id: number) {
+    return this.httpClient.delete(`${this.API_URL}product/remove` + id);
+  }
+
 }

@@ -48,11 +48,11 @@ public class ProductController {
 
     @POST
     @Path("/add")
-    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addEmployees(@PathParam("product") String jsonProduct) {
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response addEmployees(Product product) {
         try {
-            new ProductBusiness().AddProduct(new Gson().fromJson(jsonProduct, Product.class));
+            new ProductBusiness().AddProduct(product);
             return Response.ok().status(Status.OK).build();
         } catch (JsonSyntaxException ex) {
             return Response.serverError().status(400).build();
@@ -61,11 +61,11 @@ public class ProductController {
 
     @PUT
     @Path("/att")
-    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response attEmployees(@PathParam("product") String jsonProduct) {
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response attEmployees(Product product) {
         try {
-            new ProductBusiness().updateProduct(new Gson().fromJson(jsonProduct, Product.class));
+            new ProductBusiness().updateProduct(product);
             return Response.ok().status(Status.OK).build();
         } catch (JsonSyntaxException ex) {
             return Response.serverError().status(400).build();
@@ -74,8 +74,7 @@ public class ProductController {
 
     @DELETE
     @Path("/del/{id}")
-    @Produces(MediaType.APPLICATION_FORM_URLENCODED)
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
     public Response delEmployees(@PathParam("id") int id) {
         try {
             new ProductBusiness().removeProduct(id);

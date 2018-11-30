@@ -27,20 +27,24 @@ export class ListEmployeeComponent implements OnInit {
     }
 
     public getEmployee(employee: Employee): void {
-        this.employeesService.getEmployee(employee.cpf)
+        this.employeesService.getEmployee(employee.id)
             .subscribe((data: Employee) => {
                 this.employee = data;
             })
     }
 
     public delEmployee(employee: Employee): void {
-        this.employeesService.delEmployee(employee.cpf)
+        this.employeesService.delEmployee(employee.id)
             .subscribe(data => {
-                this.getEmployees();
+                this.router.navigate(['list-employee']);
             })
     }
 
-    public addEmployee(): void {
+    add() {
         this.router.navigate(['add-employee']);
+    }
+
+    return() {
+        this.router.navigate(['homepage']);
     }
 }

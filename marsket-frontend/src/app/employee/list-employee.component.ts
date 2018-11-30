@@ -11,6 +11,7 @@ import { Employee } from "../models/employee";
 export class ListEmployeeComponent implements OnInit {
 
     private employees: Array<object> = [];
+    private employee: Employee;
 
     constructor(private router: Router, private employeesService: EmployeeService) { }
 
@@ -25,8 +26,15 @@ export class ListEmployeeComponent implements OnInit {
             })
     }
 
+    public getEmployee(employee: Employee): void {
+        this.employeesService.getEmployee(employee.cpf)
+            .subscribe((data: Employee) => {
+                this.employee = data;
+            })
+    }
+
     public delEmployee(employee: Employee): void {
-        this.employeesService.delEmployee(employee.id)
+        this.employeesService.delEmployee(employee.cpf)
             .subscribe(data => {
                 this.getEmployees();
             })

@@ -42,7 +42,6 @@ export class AddEmployeeComponent implements OnInit {
     }
 
     const employee: Employee = new Employee(
-      this.addForm.value.id,
       this.addForm.value.firstName,
       this.addForm.value.lastName,
       this.addForm.value.cpf,

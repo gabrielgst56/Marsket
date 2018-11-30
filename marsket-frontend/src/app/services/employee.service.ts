@@ -17,8 +17,8 @@ export class EmployeeService {
     return this.httpClient.get(`${this.API_URL}employee/list`);
   }
 
-  getEmployee(id: number) {
-    return this.httpClient.get(`${this.API_URL}employee/get/` + id);
+  getEmployee(cpf: string) {
+    return this.httpClient.get(`${this.API_URL}employee/get/` + cpf);
   }
 
   addEmployee(employee: Employee) {
@@ -29,7 +29,7 @@ export class EmployeeService {
     return this.httpClient.put(`${this.API_URL}employee/edit`, employee, { headers: { 'Content-Type': 'application/json' } });
   }
 
-  delEmployee(id: number) {
-    return this.httpClient.delete(`${this.API_URL}employee/del/` + id);
+  delEmployee(cpf: string) {
+    return this.httpClient.delete(`${this.API_URL}employee/del/` + cpf);
   }
 }

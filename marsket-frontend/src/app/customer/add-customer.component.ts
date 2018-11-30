@@ -39,6 +39,10 @@ export class AddCustomerComponent implements OnInit {
     if (this.addForm.invalid) {
         return;
     }
+    
+    if(this.addForm.value.discount == null){
+      this.addForm.value.discount = false;
+    }
 
     const customer: Customer = new Customer(
       this.addForm.value.firstName,

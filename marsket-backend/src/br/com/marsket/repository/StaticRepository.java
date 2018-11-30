@@ -26,9 +26,9 @@ public class StaticRepository {
 
         listCustomer = new LinkedList<Customer>() {
             {
-                add(new Customer(modCount, true, "Thomas Erick", "Joaquim Farias", "63277321436"));
-                add(new Customer(modCount, false, "Vinicius Arthur", "Pedro Barros", "08108139554"));
-                add(new Customer(modCount, true, "Severino Geraldo", "Fábio Gonçalves", "21047352036"));
+                add(new Customer(true, "Thomas Erick", "Joaquim Farias", "63277321436"));
+                add(new Customer(false, "Vinicius Arthur", "Pedro Barros", "08108139554"));
+                add(new Customer(true, "Severino Geraldo", "Fábio Gonçalves", "21047352036"));
             }
         };
 

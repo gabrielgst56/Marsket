@@ -6,6 +6,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import br.com.marsket.business.UserBusiness;
 import br.com.marsket.model.User;
@@ -16,13 +17,12 @@ public class UserController {
     @GET
     @Path("/login/{username}/{password}")
     @Produces(MediaType.TEXT_PLAIN)
-    public String getLogin(@PathParam("username") String username,
+    public Response getLogin(@PathParam("username") String username,
             @PathParam("password") String password) {
-
         if (new UserBusiness().getLogin(username, password)) {
-            return "true";
+            return Response.status(200).build();
         } else {
-            return "false";
+            return Response.serverError().status(400).build();
         }
     }
 

@@ -8,13 +8,12 @@
     <br>
     <br>
     <table class="table table-striped">
-      <thead>
+      <thead class ="thead-dark">
         <tr>
           <th>Name</th>
           <th>Price</th>
           <th>Quantity</th>
           <th>Have discount for custommers?</th>
-          <th></th>
           <th></th>
         </tr>
       </thead>
@@ -25,8 +24,8 @@
           <td>{{product.quantity}}</td>
           <td>{{product.haveDiscount ? 'Yes' : 'No'}}</td>
           <td>
-            <button class="btn" (click)="deleteProduct(product)"> Delete</button>
-            <button class="btn" (click)="editProduct(product)" style="margin-left: 20px;"> Edit</button>
+            <button class="btn btn-danger" (click)="deleteProduct(product)"> Delete</button>
+            <button class="btn btn-info" (click)="editProduct(product)" style="margin-left: 20px;"> Edit</button>
           </td>
         </tr>
       </tbody>

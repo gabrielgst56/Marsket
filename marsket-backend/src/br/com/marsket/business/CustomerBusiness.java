@@ -6,7 +6,6 @@ import java.util.LinkedList;
 
 public class CustomerBusiness {
 
-
     public LinkedList<Customer> getCustomers() {
         return new CustomerRepository().getAll();
     }

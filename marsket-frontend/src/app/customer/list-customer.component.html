@@ -5,24 +5,24 @@
     <button class="btn" style="display:inline-block;" (click)="addCustomer()">Add Customer</button> <br>
     <br>
     <table class="table table-striped">
-      <thead>
+      <thead class ="thead-dark">
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
+          <th>Name</th>
           <th>CPF</th>
-          <th>Have Discount?</th>
+          <th>Have discount?</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let customer of customers">
-          <td>{{customer.firstName}}</td>
-          <td>{{customer.lastName}}</td>
+          <td>{{customer.firstName + " " + customer.lastName}}</td>
           <td>{{customer.cpf}}</td>
-          <td>{{customer.haveDiscount}}</td>
+          <td>{{customer.haveDiscount ? 'Yes' : 'No'}}</td>
           <td></td>
           <td>
-            <button class="btn" (click)="delCustomer(customer)">Delete</button>
-            <button class="btn" (click)="attCustomer(customer)" style="margin-left: 20px;">Edit</button>
+            <button class="btn btn-danger" (click)="delCustomer(customer)">Delete</button>
+            <button class="btn btn-info" (click)="attCustomer(customer)" style="margin-left: 20px;">Edit</button>
           </td>
         </tr>
       </tbody>

@@ -12,6 +12,9 @@ import { AddEmployeeComponent } from './employee/add-employee.component';
 import { ListEmployeeComponent } from './employee/list-employee.component';
 import { ListCustomerComponent } from './customer/list-customer.component';
 import { AddProductComponent } from './product/add-product.component';
+import { MenuComponent } from './menu/menu.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { AddProductComponent } from './product/add-product.component';
     AddEmployeeComponent,
     ListEmployeeComponent,
     ListCustomerComponent,
-    AddProductComponent
+    AddProductComponent,
+    MenuComponent
     
   ],
   imports: [
@@ -31,6 +35,12 @@ import { AddProductComponent } from './product/add-product.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

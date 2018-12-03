@@ -14,29 +14,16 @@ import java.util.LinkedList;
  */
 public class EmployeeRepository implements BaseRepository<Employee> {
 
-	private LinkedList<Employee> Employee;
-	
-	public EmployeeRepository() {
-    	if(StaticRepository.initialize == false) {
-    		StaticRepository.initList();
-    		System.out.println("Euuu");
-    	}
-    	
-    	Employee = new LinkedList<>();
-        for(Employee employee : Employee) {
-        	Employee.add(employee);
-        }
-		
-	}
-	
+    public EmployeeRepository() {}
+
     @Override
     public LinkedList<Employee> getAll() {
-        return this.Employee;
+        return StaticRepository.listEmployee;
     }
 
     @Override
     public Employee getObject(int id) {
-        for (Employee employee : Employee) {
+        for (Employee employee : StaticRepository.listEmployee) {
             if (employee.getId() == id) {
                 return employee;
             }
@@ -46,19 +33,19 @@ public class EmployeeRepository implements BaseRepository<Employee> {
 
     @Override
     public void insert(Employee m) {
-        if (!Employee.isEmpty()) {
-            m.setId(Employee.getLast().getId() + 1);
+        if (!StaticRepository.listEmployee.isEmpty()) {
+            m.setId(StaticRepository.listEmployee.getLast().getId() + 1);
         } else {
             m.setId(0);
         }
-        Employee.add(m);
+        StaticRepository.listEmployee.add(m);
     }
 
     @Override
     public void update(Employee m) {
-        for (int i = 0; i < Employee.size(); i++) {
-            if (Employee.get(i).getId() == m.getId()) {
-                Employee.set(i, m);
+        for (int i = 0; i < StaticRepository.listEmployee.size(); i++) {
+            if (StaticRepository.listEmployee.get(i).getId() == m.getId()) {
+                StaticRepository.listEmployee.set(i, m);
                 break;
             }
         }
@@ -66,10 +53,9 @@ public class EmployeeRepository implements BaseRepository<Employee> {
 
     @Override
     public void delete(int id) {
-        for (int i = 0; i < Employee.size(); i++) {
-            if (Employee.get(i).getId() == id) {
-                Employee.remove(i);
-                break;
+        for (Employee employee : StaticRepository.listEmployee) {
+            if (employee.getId() == id) {
+                StaticRepository.listEmployee.remove(employee);
             }
         }
     }

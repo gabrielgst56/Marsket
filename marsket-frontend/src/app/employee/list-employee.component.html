@@ -13,12 +13,11 @@
       </nav>
       <div class="table-employee">
         <div style="margin-bottom: 20px;">
-          <button type="button" class="btn btn-dark" (click)="return()">
+          <button type="button" class="btn btn-dark" [routerLink]="['/homepage']">
             <i class="fa fa-server"></i>
             <span>Return</span>
           </button>
-          <button type="button" class="btn btn-primary" style="margin-left: 20px;"
-            (click)="add()">
+          <button type="button" class="btn btn-primary" style="margin-left: 20px;" [routerLink]="['/add-employee']">
             <i class="fas fa-server"></i>
             <span>New</span>
           </button>

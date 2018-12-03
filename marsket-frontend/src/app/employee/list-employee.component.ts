@@ -40,11 +40,10 @@ export class ListEmployeeComponent implements OnInit {
             })
     }
 
-    add() {
-        this.router.navigate(['add-employee']);
-    }
-
-    return() {
-        this.router.navigate(['homepage']);
+    public editEmployee(employee: Employee): void {
+        this.employeesService.editEmployee(employee)
+            .subscribe(data => {
+                this.router.navigate(['add-employee']);
+            })
     }
 }

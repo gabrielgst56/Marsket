@@ -25,7 +25,7 @@ export class EmployeeService {
     return this.httpClient.post(`${this.API_URL}employee/add`, employee, { headers: { 'Content-Type': 'application/json' } });
   }
 
-  attEmployee(employee: Employee) {
+  editEmployee(employee: Employee) {
     return this.httpClient.put(`${this.API_URL}employee/edit`, employee, { headers: { 'Content-Type': 'application/json' } });
   }
 

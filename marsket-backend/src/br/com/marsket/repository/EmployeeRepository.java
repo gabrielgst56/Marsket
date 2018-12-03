@@ -14,16 +14,28 @@ import java.util.LinkedList;
  */
 public class EmployeeRepository implements BaseRepository<Employee> {
 
-    public EmployeeRepository() {}
+    private LinkedList<Employee> listEmployee;
+
+    public EmployeeRepository() {
+        if (StaticRepository.initialize == false) {
+            StaticRepository.initList();
+            System.out.println("Euuu");
+        }
+
+        listEmployee = new LinkedList<>();
+        for (Employee employee : StaticRepository.listEmployee) {
+            listEmployee.add(employee);
+        }
+    }
 
     @Override
     public LinkedList<Employee> getAll() {
-        return StaticRepository.listEmployee;
+        return listEmployee;
     }
 
     @Override
     public Employee getObject(int id) {
-        for (Employee employee : StaticRepository.listEmployee) {
+        for (Employee employee : listEmployee) {
             if (employee.getId() == id) {
                 return employee;
             }
@@ -53,9 +65,10 @@ public class EmployeeRepository implements BaseRepository<Employee> {
 
     @Override
     public void delete(int id) {
-        for (Employee employee : StaticRepository.listEmployee) {
-            if (employee.getId() == id) {
-                StaticRepository.listEmployee.remove(employee);
+        for (int i = 0; i < StaticRepository.listEmployee.size(); i++) {
+            if (StaticRepository.listEmployee.get(i).getId() == id) {
+                StaticRepository.listEmployee.remove(i);
+                break;
             }
         }
     }

@@ -7,7 +7,6 @@ import br.com.marsket.model.User;
 import br.com.marsket.util.UserTypeEnum;
 import java.util.LinkedList;
 
-@SuppressWarnings("serial")
 public class StaticRepository {
 
     public static LinkedList<User> listUser;

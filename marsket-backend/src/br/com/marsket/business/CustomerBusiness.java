@@ -2,7 +2,6 @@ package br.com.marsket.business;
 
 import br.com.marsket.model.Customer;
 import br.com.marsket.repository.CustomerRepository;
-import br.com.marsket.repository.StaticRepository;
 
 import java.util.LinkedList;
 

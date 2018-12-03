@@ -22,7 +22,7 @@ import br.com.marsket.business.CustomerBusiness;
 @Path("/customer")
 public class CustomerController {
 
-	  @GET
+	  	@GET
 	    @Path("/list")
 	    @Produces(MediaType.APPLICATION_JSON)
 	    public Response getProducts() {

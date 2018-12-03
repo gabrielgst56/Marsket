@@ -25,7 +25,7 @@ export  class  CustomerService {
     return this.httpClient.post(`${this.API_URL}customer/add`, customer, { headers: { 'Content-Type': 'application/json' } });
   }
 
-  attCustomer(customer: Customer) {
+  editCustomer(customer: Customer) {
     return this.httpClient.put(`${this.API_URL}customer/edit`, customer, { headers: { 'Content-Type': 'application/json' } });
   }
 

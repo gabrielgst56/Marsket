@@ -32,13 +32,8 @@ public class CustomerRepository implements BaseRepository<Customer> {
     }
 
     @Override
-    public void insert(Customer m) {
-    	if (!StaticRepository.listCustomer.isEmpty()) {
-            m.setId(StaticRepository.listCustomer.getLast().getId() + 1);
-        } else {
-            m.setId(0);
-        }
-        StaticRepository.listCustomer.add(m);
+    public void insert(Customer customer) {
+    	this.Customers.add(customer);
     }
 
     @Override

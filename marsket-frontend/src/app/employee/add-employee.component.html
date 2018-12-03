@@ -1,39 +1,64 @@
 <div class="add-employee-holder">
-  <div class="content">
-    <h2 class="text-center">Add Employee</h2>
-    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <input type="text" formControlName="firstName" placeholder="First Name" firstName="firstName" class="form-control" id="firstName"
-          [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-          <div *ngIf="f.firstName.errors.required">First name is required</div>
+  <div class="content-fluid">
+    <section>
+      <nav aria-label="breadcrumb">
+        <p class="h2">Add Employee</p>
+        <hr/>
+        <ol class="breadcrumb" style="background-color: transparent; padding: 0px;">
+          <li class="breadcrumb-item">
+            <a [routerLink]="['/homepage']">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a [routerLink]="['/list-employee']">Employees</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Add</li>
+        </ol>
+      </nav>
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="form-employee">
+        <div class="form-row">
+          <div class="form-group col-sm-12 col-md-6">
+            <input type="text" id="employee-first-name" formControlName="firstName" class="form-control" placeholder="First Name" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+            />
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+              <div *ngIf="f.firstName.errors.required">First name is required</div>
+            </div>
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            <input type="text" id="employee-last-name" formControlName="lastName" class="form-control" placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+            />
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required">Last name is required</div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="form-group">
-        <input type="text" formControlName="lastName" placeholder="Last Name" lastName="lastName" class="form-control" id="lastName"
-          [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-          <div *ngIf="f.lastName.errors.required">Last name is required</div>
+        <div class="form-row">
+          <div class="form-group col-sm-12 col-md-6">
+            <input type="text" id="employee-cpf" formControlName="cpf" class="form-control" placeholder="CPF" style="text-align: center;"
+              pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" [ngClass]="{ 'is-invalid': submitted && f.cpf.errors }">
+            <div *ngIf="submitted && f.cpf.errors" class="invalid-feedback">
+              <div *ngIf="f.cpf.errors.required">CPF is required</div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <div class="input-group">
+              <div class="input-group-prepend mb-2">
+                <span class="input-group-text" id="inputGroupPrepend">R$</span>
+              </div>
+              <input type="number" id="employee-salary" formControlName="salary" class="form-control currency" placeholder="Salary" style="text-align: center;"
+                min="0.00" [ngClass]="{ 'is-invalid': submitted && f.salary.errors }">
+              <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
+                <div *ngIf="f.salary.errors.required">Salary is required</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="form-group">
-        <input type="text" formControlName="cpf" placeholder="xxx.xxx.xxx-xx" name="CPF" class="form-control" id="cpf" [ngClass]="{ 'is-invalid': submitted && f.cpf.errors }">
-        <div *ngIf="submitted && f.cpf.errors" class="invalid-feedback">
-          <div *ngIf="f.cpf.errors.required">CPF is required</div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <input type="number" formControlName="salary" placeholder="Salary" name="Salary" class="form-control" id="salary" [ngClass]="{ 'is-invalid': submitted && f.salary.errors }">
-        <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
-          <div *ngIf="f.salary.errors.required">Salary is required</div>
-        </div>
-      </div>
-
-      <button class="btn btn-success">Confirm</button>
-      <button class="btn btn-success" style="margin-left: 20px;" (click)="return()">Cancel</button>
-    </form>
+        <button type="button|submit" class="btn btn-success float-right" style="margin-left: 15px;" (click)="onSubmit()">
+          <span>Confirm</span>
+        </button>
+        <button type="button|reset" class="btn btn-danger float-right" (click)="cancel()">
+          <span>Cancel</span>
+        </button>
+      </form>
+    </section>
   </div>
 </div>

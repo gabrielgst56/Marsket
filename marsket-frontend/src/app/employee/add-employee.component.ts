@@ -51,7 +51,7 @@ export class AddEmployeeComponent implements OnInit {
       });
   }
 
-  return() {
+  cancel() {
     this.router.navigate(['list-employee']);
   }
 

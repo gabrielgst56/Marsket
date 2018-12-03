@@ -1,33 +1,55 @@
 <div class="list-employee-holder">
-  <div class="content">
-    <h2>Employees</h2>
-    <br>
-    <button class="btn" style="display:inline-block;" (click)="return()">Return</button>
-    <button class="btn" style="display:inline-block; margin-left: 20px;" (click)="add()">Add Employee</button> <br>
-    <br>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Salary</th>
-          <th></th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let employee of employees">
-          <td>{{employee.cpf}}</td>
-          <td>{{employee.firstName}}</td>
-          <td>{{employee.lastName}}</td>
-          <td>{{employee.salary}}</td>
-          <td></td>
-          <td>
-            <button class="btn" (click)="delEmployee(employee)">Delete</button>
-            <button class="btn" (click)="attEmployee(employee)" style="margin-left: 20px;">Edit</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="content-fluid">
+    <section>
+      <nav aria-label="breadcrumb">
+        <p class="h2">Employees</p>
+        <hr/>
+        <ol class="breadcrumb" style="background-color: transparent; padding: 0px;">
+          <li class="breadcrumb-item">
+            <a [routerLink]="['/homepage']">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Employees</li>
+        </ol>
+      </nav>
+      <div class="table-employee">
+        <div style="margin-bottom: 20px;">
+          <button type="button" class="btn btn-dark" (click)="return()">
+            <i class="fa fa-server"></i>
+            <span>Return</span>
+          </button>
+          <button type="button" class="btn btn-primary" style="margin-left: 20px;"
+            (click)="add()">
+            <i class="fas fa-server"></i>
+            <span>Add Employee</span>
+          </button>
+        </div>
+        <div>
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employees">
+                <th scope="row">{{employee.id}}</th>
+                <td>{{employee.cpf}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.salary}}</td>
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="delEmployee(employee)">Delete</button>
+                  <button type="button" class="btn btn-success" (click)="attEmployee(employee)" style="margin-left: 20px;">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
   </div>
 </div>

@@ -7,6 +7,7 @@ import { AddEmployeeComponent } from './employee/add-employee.component';
 import { ListEmployeeComponent } from './employee/list-employee.component';
 import { AddProductComponent } from './product/add-product.component';
 import { ListCustomerComponent } from './customer/list-customer.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -23,10 +24,6 @@ const routes: Routes = [
         component: ListEmployeeComponent
     },
     {
-        path: 'add-customer',
-        component: AddCustomerComponent
-    },
-    {
         path: 'add-employee',
         component: AddEmployeeComponent
     },
@@ -37,6 +34,14 @@ const routes: Routes = [
     {
         path: 'list-customer',
         component: ListCustomerComponent
+    },
+    {
+        path: 'add-customer',
+        component: AddCustomerComponent
+    },
+    {
+        path: 'menu',
+        component: MenuComponent
     }
 ];
 

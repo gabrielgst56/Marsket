@@ -41,7 +41,7 @@
                 <td>{{employee.lastName}}</td>
                 <td>{{employee.salary}}</td>
                 <td>
-                  <button type="button" class="btn btn-danger" (click)="delEmployee(employee)">Delete</button>
+                  <button type="button" class="btn btn-danger" (click)="delEmployee(employee.id)">Delete</button>
                   <button type="button" class="btn btn-success" (click)="attEmployee(employee)" style="margin-left: 20px;">Edit</button>
                 </td>
               </tr>

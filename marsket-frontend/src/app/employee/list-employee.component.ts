@@ -33,8 +33,8 @@ export class ListEmployeeComponent implements OnInit {
             })
     }
 
-    public delEmployee(employee: Employee): void {
-        this.employeesService.delEmployee(employee.id)
+    public delEmployee(id: number): void {
+        this.employeesService.delEmployee(id)
             .subscribe(data => {
                 this.router.navigate(['list-employee']);
             })

@@ -1,5 +1,4 @@
 package br.com.marsket.test;
-
 import br.com.marsket.controller.CustomerController;
 import br.com.marsket.controller.ProductController;
 import br.com.marsket.model.Customer;
@@ -7,6 +6,7 @@ import br.com.marsket.repository.CustomerRepository;
 import java.util.LinkedList;
 
 import javax.ws.rs.core.Response;
+import br.com.marsket.repository.StaticRepository;
 
 public class MainCustomer {
 

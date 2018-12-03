@@ -7,6 +7,7 @@
     <table class="table table-striped">
       <thead class ="thead-dark">
         <tr>
+          <th>Id</th>
           <th>Name</th>
           <th>CPF</th>
           <th>Have discount?</th>
@@ -16,6 +17,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let customer of customers">
+          <td>{{customer.id}}</td>
           <td>{{customer.firstName + " " + customer.lastName}}</td>
           <td>{{customer.cpf}}</td>
           <td>{{customer.haveDiscount ? 'Yes' : 'No'}}</td>

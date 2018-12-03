@@ -30,6 +30,7 @@ export  class  CustomerService {
   }
 
   delCustomer(id: number) {
+    console.log(id);
     return this.httpClient.delete(`${this.API_URL}customer/del/` + id);
   }
 }

@@ -28,5 +28,12 @@ export class ListCustomerComponent implements OnInit {
 
   public addCustomer(): void {
     this.router.navigate(['add-customer']);
-}
+   }
+
+   public delCustomer(customer: Customer): void {
+    this.customerService.delCustomer(customer.id)
+        .subscribe(data => {
+            this.router.navigate(['list-customer']);
+        })
+    }
 }

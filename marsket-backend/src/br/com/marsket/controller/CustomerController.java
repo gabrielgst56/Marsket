@@ -25,10 +25,11 @@ public class CustomerController {
 	  	@GET
 	    @Path("/list")
 	    @Produces(MediaType.APPLICATION_JSON)
-	    public Response getProducts() {
+	    public Response getCustomers() {
 	        try {
 	            String response = new Gson().toJson(new CustomerBusiness().getCustomers());
 	            return Response.status(200).entity(response).build();
+	            
 	        } catch (Exception ex) {
 	            return Response.serverError().status(400).build();
 	        }
@@ -77,6 +78,7 @@ public class CustomerController {
 	    @Produces(MediaType.APPLICATION_FORM_URLENCODED)
 	    @Consumes(MediaType.APPLICATION_JSON)
 	    public Response delCustomer(@PathParam("id") int id) {
+	    	System.out.println(id);
 	        try {
 	            new CustomerBusiness().removeCustomer(id);
 	            return Response.ok().status(Status.OK).build();

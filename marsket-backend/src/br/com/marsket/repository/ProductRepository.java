@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class ProductRepository implements BaseRepository<Product> {
 
-    public LinkedList<Product> Products;
+	private LinkedList<Product> Products;
 
     public ProductRepository() {
         Products = new LinkedList<>();

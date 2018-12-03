@@ -2,12 +2,14 @@ package br.com.marsket.business;
 
 import br.com.marsket.model.Customer;
 import br.com.marsket.repository.CustomerRepository;
+import br.com.marsket.repository.StaticRepository;
+
 import java.util.LinkedList;
 
 public class CustomerBusiness {
 
     public LinkedList<Customer> getCustomers() {
-        return new CustomerRepository().getAll();
+    	return new CustomerRepository().getAll(); 
     }
 
     public Customer getCustomer(int id) {

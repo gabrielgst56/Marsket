@@ -13,20 +13,18 @@
       </nav>
       <div class="table-employee">
         <div style="margin-bottom: 20px;">
-          <button type="button" class="btn btn-dark" [routerLink]="['/homepage']">
-            <i class="fa fa-server"></i>
-            <span>Return</span>
+          <button type="button" class="btn btn-dark fa fa-chevron-left" [routerLink]="['/homepage']">
+            <span>&nbsp;Return</span>
           </button>
-          <button type="button" class="btn btn-primary" style="margin-left: 20px;" [routerLink]="['/add-employee']">
-            <i class="fas fa-server"></i>
-            <span>New</span>
+          <button type="button" class="btn btn-primary fa fa-plus" style="margin-left: 20px;" [routerLink]="['/add-employee']">
+            <span>&nbsp;New</span>
           </button>
         </div>
         <div>
           <table class="table table-striped">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">CPF</th>
                 <th scope="col">Name</th>
                 <th scope="col">Salary</th>
@@ -40,8 +38,8 @@
                 <td>{{employee.firstName + " " + employee.lastName}}</td>
                 <td>{{employee.salary}}</td>
                 <td>
-                  <button type="button" class="btn btn-danger" (click)="delEmployee(employee.id)">Delete</button>
-                  <button type="button" class="btn btn-success" (click)="attEmployee(employee)" style="margin-left: 20px;">Edit</button>
+                  <button type="button" class="btn btn-danger fa fa-trash" (click)="delEmployee(employee.id)"></button>
+                  <button type="button" class="btn btn-success fa fa-edit" (click)="attEmployee(employee)" style="margin-left: 20px;"></button>
                 </td>
               </tr>
             </tbody>

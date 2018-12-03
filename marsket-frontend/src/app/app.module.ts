@@ -15,6 +15,7 @@ import { AddProductComponent } from './product/add-product.component';
 import { MenuComponent } from './menu/menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { DialogConfirmComponent } from './dialog/dialog-confirm.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     ListEmployeeComponent,
     ListCustomerComponent,
     AddProductComponent,
-    MenuComponent
+    MenuComponent,
+    DialogConfirmComponent
     
   ],
   imports: [

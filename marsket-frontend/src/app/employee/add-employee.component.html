@@ -2,7 +2,7 @@
   <div class="content-fluid">
     <section>
       <nav aria-label="breadcrumb">
-        <p class="h2">Add Employee</p>
+        <p class="h2">New Employee</p>
         <hr/>
         <ol class="breadcrumb" style="background-color: transparent; padding: 0px;">
           <li class="breadcrumb-item">
@@ -11,7 +11,7 @@
           <li class="breadcrumb-item">
             <a [routerLink]="['/list-employee']">Employees</a>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">Add</li>
+          <li class="breadcrumb-item active" aria-current="page">New</li>
         </ol>
       </nav>
       <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="form-employee">
@@ -42,7 +42,7 @@
           <div class="col-sm-12 col-md-6">
             <div class="input-group">
               <div class="input-group-prepend mb-2">
-                <span class="input-group-text" id="inputGroupPrepend">R$</span>
+                <span class="input-group-text">R$</span>
               </div>
               <input type="number" id="employee-salary" formControlName="salary" class="form-control currency" placeholder="Salary" style="text-align: center;"
                 min="0.00" [ngClass]="{ 'is-invalid': submitted && f.salary.errors }">

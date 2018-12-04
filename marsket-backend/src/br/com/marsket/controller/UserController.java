@@ -21,8 +21,9 @@ public class UserController {
             @PathParam("password") String password) {
         if (new UserBusiness().getLogin(username, password)) {
             return Response.status(200).build();
-        } else {
-            return Response.serverError().status(400).build();
+        } else {                    
+            return Response.status(400).entity(
+            		new Exception("Usuário ou senha inválidos.")).build();
         }
     }
 

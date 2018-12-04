@@ -1,8 +1,6 @@
 .list-employee-holder {
-    animation-name: example;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
+    height: 100vh;
+    background-color: rgb(240, 244, 245);
 }
 
 .table-employee{
@@ -14,12 +12,7 @@
 }
 
 section {
-    margin: 50px;
-}
-
-hr {
-    display: block;
-    border: 1px solid #33a4c9;
+    padding: 50px;
 }
 
 .btn {

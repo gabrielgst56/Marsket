@@ -1,0 +1,36 @@
+package br.com.marsket.controller;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+
+import br.com.marsket.business.ProductBusiness;
+import br.com.marsket.business.SaleBusiness;
+import br.com.marsket.model.Sale;
+
+@Path("/sale")
+public class SaleController {
+
+	@POST
+    @Path("/add")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response addSale(Sale sale) {
+        try {
+        	String response = new Gson().toJson(new SaleBusiness().AddSale(sale));
+            //return Response.ok().status(Status.OK).build();
+            System.out.println(response);
+            //Não ta convertendo pra Json
+            return Response.status(200).entity(response).build();
+        } catch (JsonSyntaxException ex) {
+            return Response.serverError().status(400).build();
+        }
+    }
+
+}

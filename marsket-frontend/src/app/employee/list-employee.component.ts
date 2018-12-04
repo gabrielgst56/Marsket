@@ -35,9 +35,7 @@ export class ListEmployeeComponent implements OnInit {
 
     public delEmployee(id: number): void {
         this.employeesService.delEmployee(id)
-            .subscribe(data => {
-                this.router.navigate(['list-employee']);
-            })
+            .subscribe(sucess => { this.ngOnInit() });
     }
 
     public editEmployee(employee: Employee): void {

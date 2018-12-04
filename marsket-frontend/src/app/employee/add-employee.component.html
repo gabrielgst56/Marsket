@@ -3,7 +3,7 @@
     <section>
       <nav aria-label="breadcrumb">
         <p class="h2">New Employee</p>
-        <hr/>
+        <hr />
         <ol class="breadcrumb" style="background-color: transparent; padding: 0px;">
           <li class="breadcrumb-item">
             <a [routerLink]="['/homepage']">Home</a>
@@ -17,15 +17,15 @@
       <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="form-employee">
         <div class="form-row">
           <div class="form-group col-sm-12 col-md-6">
-            <input type="text" id="employee-first-name" formControlName="firstName" class="form-control" placeholder="First Name" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
-            />
+            <input type="text" id="employee-first-name" formControlName="firstName" class="form-control" placeholder="First Name"
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
               <div *ngIf="f.firstName.errors.required">First name is required</div>
             </div>
           </div>
           <div class="form-group col-sm-12 col-md-6">
-            <input type="text" id="employee-last-name" formControlName="lastName" class="form-control" placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
-            />
+            <input type="text" id="employee-last-name" formControlName="lastName" class="form-control" placeholder="Last Name"
+              [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
             <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
               <div *ngIf="f.lastName.errors.required">Last name is required</div>
             </div>
@@ -44,15 +44,15 @@
               <div class="input-group-prepend mb-2">
                 <span class="input-group-text">R$</span>
               </div>
-              <input type="number" id="employee-salary" formControlName="salary" class="form-control currency" placeholder="Salary" style="text-align: center;"
-                min="0.00" [ngClass]="{ 'is-invalid': submitted && f.salary.errors }">
+              <input type="number" id="employee-salary" formControlName="salary" class="form-control currency"
+                placeholder="Salary" style="text-align: center;" min="0.00" [ngClass]="{ 'is-invalid': submitted && f.salary.errors }">
               <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
                 <div *ngIf="f.salary.errors.required">Salary is required</div>
               </div>
             </div>
           </div>
         </div>
-        <button type="button|submit" class="btn btn-success float-right" style="margin-left: 15px;" (click)="onSubmit()">
+        <button type="button|submit" class="btn btn-success float-right" style="margin-left: 15px;">
           <span>Confirm</span>
         </button>
         <button type="button|reset" class="btn btn-danger float-right" [routerLink]="['/list-employee']">

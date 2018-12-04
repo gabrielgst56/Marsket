@@ -58,4 +58,13 @@ public class ProductRepository implements BaseRepository<Product> {
             }
         }
     }
+    
+    //Não tenho certeza se o método ficaria aqui na repository ou na ProductBusiness
+    public void setQuantity(int id, int quantity) {
+    	 for (Product product : StaticRepository.listProduct) {
+             if (product.getId() == id) {
+                 product.setQuantity(product.getQuantity() - quantity);
+             }
+         }
+    }
 }

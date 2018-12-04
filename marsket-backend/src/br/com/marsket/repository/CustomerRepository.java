@@ -36,7 +36,12 @@ public class CustomerRepository implements BaseRepository<Customer> {
 
     @Override
     public void insert(Customer customer) {
-    	StaticRepository.listCustomer.add(customer);
+    	if (!StaticRepository.listCustomer.isEmpty()) {
+    		customer.setId(StaticRepository.listCustomer.getLast().getId() + 1);
+        } else {
+        	customer.setId(0);
+        }
+        StaticRepository.listCustomer.add(customer);
     }
 
     @Override
@@ -51,10 +56,10 @@ public class CustomerRepository implements BaseRepository<Customer> {
 
     @Override
     public void delete(int id) {
-    	for(Customer customer : Customers) {
-    		if(customer.getId() == id) {
-    			Customers.remove(customer);
-    			break;
+    	for (int i = 0; i < StaticRepository.listCustomer.size(); i++) {
+    		if (StaticRepository.listCustomer.get(i).getId() == id) {
+    			StaticRepository.listCustomer.remove(i);
+                break;
     		}
     	}
     }

@@ -1,0 +1,37 @@
+<div class="edit-customer-holder">
+  <div class="content">
+    <h2 class="text-center">Edit Customer</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input type="firstName" formControlName="firstName" placeholder="First Name" firstName="firstName" 
+        class="form-control" id="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <div *ngIf="f.firstName.errors.required">First name is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <input type="lastName" formControlName="lastName" placeholder="Last Name" lastName="lastName" 
+        class="form-control" id="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+          <div *ngIf="f.lastName.errors.required">Last name is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <input formControlName="cpf" placeholder="Cpf" name="cpf" class="form-control" id="cpf">
+        <div *ngIf="submitted && f.cpf.errors" class="invalid-feedback">
+          <div *ngIf="f.cpf.errors.required">Cpf is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="discount">Have Discount?:</label>
+        <input style="margin-left: 20px;" type="checkbox" formControlName="discount" placeholder="discount" name="discount" class="form-check-input" id="discount">
+      </div>
+  
+      <button class="btn btn-success">Confirm</button>
+      <button class="btn btn-danger" style="margin-left: 20px;"  (click)="return()">Cancel</button>
+    </form>
+  </div>
+  </div>

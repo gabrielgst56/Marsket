@@ -7,7 +7,7 @@ import { Customer } from '../models/customer';
 })
 export  class  CustomerService {
 
-  public user: Customer;
+  public customer: Customer;
 
   API_URL  =  'http://localhost:4200/api/marsket-backend/rest/';
 

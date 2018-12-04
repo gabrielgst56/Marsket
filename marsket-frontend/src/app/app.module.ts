@@ -16,6 +16,7 @@ import { MenuComponent } from './menu/menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { DialogConfirmComponent } from './dialog/dialog-confirm.component';
+import { EditCustomerComponent } from './customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,8 @@ import { DialogConfirmComponent } from './dialog/dialog-confirm.component';
     ListCustomerComponent,
     AddProductComponent,
     MenuComponent,
-    DialogConfirmComponent
-    
+    DialogConfirmComponent,
+    EditCustomerComponent
   ],
   imports: [
     FormsModule,

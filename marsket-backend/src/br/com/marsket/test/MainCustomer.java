@@ -49,14 +49,15 @@ public class MainCustomer {
     	
     	Customer customer = new Customer(1, true, "Thomas Erick", "Joaquim Farias", "63277321436");
     	ArrayList<Product> lst = new ArrayList<>();
-    	Product produto = new Product (1, "12312156", "Porca de 10cm", 10.00, 10, false);
+    	Product produto = new Product (1, "12312156", "Porca de 10cm", 10.00, 2, false);
     	lst.add(produto);
     	Employee employee = new Employee(1, 1000.00, "Vicente", "Antonio das Neves", "27788607380");
     	Sale sale = new Sale(customer, lst, employee, 0);
     	SaleController controle = new SaleController();
     	Response re = controle.addSale(sale);
     	
-    	System.out.println(re);
+    	ProductController control2 = new ProductController();
+    	Response re2 = control2.getProduct(1);
     	
     }
 

@@ -8,10 +8,15 @@ public class ProductRepository implements BaseRepository<Product> {
 	private LinkedList<Product> Products;
 
     public ProductRepository() {
-        Products = new LinkedList<>();
-        Products.add(new Product(0, "12421421", "Farinha", 10.99, 10, true));
-        Products.add(new Product(1, "21345234", "Óleo", 12.99, 15, true));
-        Products.add(new Product(2, "42424246", "Macarrao", 12.99, 15, true));
+    	if(StaticRepository.initialize == false) {
+    		StaticRepository.initList();
+    	}
+    	
+    	Products = new LinkedList<>();
+        for(Product product : StaticRepository.listProduct) {
+        	Products.add(product);
+        }
+    	
     }
 
     @Override

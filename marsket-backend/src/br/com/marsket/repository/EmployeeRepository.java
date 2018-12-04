@@ -19,7 +19,6 @@ public class EmployeeRepository implements BaseRepository<Employee> {
     public EmployeeRepository() {
         if (StaticRepository.initialize == false) {
             StaticRepository.initList();
-            System.out.println("Euuu");
         }
 
         listEmployee = new LinkedList<>();

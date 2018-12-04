@@ -24,9 +24,6 @@ public class SaleController {
     public Response addSale(Sale sale) {
         try {
         	String response = new Gson().toJson(new SaleBusiness().AddSale(sale));
-            //return Response.ok().status(Status.OK).build();
-            System.out.println(response);
-            //Não ta convertendo pra Json
             return Response.status(200).entity(response).build();
         } catch (JsonSyntaxException ex) {
             return Response.serverError().status(400).build();

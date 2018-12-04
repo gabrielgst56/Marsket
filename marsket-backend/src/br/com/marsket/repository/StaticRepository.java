@@ -55,7 +55,7 @@ public class StaticRepository {
 			{
                 add(new Employee(modCount, 1000.00, "Vicente", "Antonio das Neves", "27788607380"));
                 add(new Employee(modCount, 1500.00, "Eduardo", "Julio Vieira", "46941215291"));
-                add(new Employee(modCount, 2000.00, "Miguel", "Anthony da Concei��o", "26063487298"));
+                add(new Employee(modCount, 2000.00, "Miguel", "Anthony da Conceicao", "26063487298"));
             }
         };
 

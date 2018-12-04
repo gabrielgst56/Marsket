@@ -10,7 +10,6 @@ public class CustomerRepository implements BaseRepository<Customer> {
     public CustomerRepository() {
     	if(StaticRepository.initialize == false) {
     		StaticRepository.initList();
-    		System.out.println("Euuu");
     	}
     	
     	Customers = new LinkedList<>();

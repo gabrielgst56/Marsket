@@ -12,9 +12,7 @@ import { AddEmployeeComponent } from './employee/add-employee.component';
 import { ListEmployeeComponent } from './employee/list-employee.component';
 import { ListCustomerComponent } from './customer/list-customer.component';
 import { AddProductComponent } from './product/add-product.component';
-import { MenuComponent } from './menu/menu.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { DialogConfirmComponent } from './dialog/dialog-confirm.component';
 import { EditCustomerComponent } from './customer/edit-customer.component';
 
@@ -28,7 +26,6 @@ import { EditCustomerComponent } from './customer/edit-customer.component';
     ListEmployeeComponent,
     ListCustomerComponent,
     AddProductComponent,
-    MenuComponent,
     DialogConfirmComponent,
     EditCustomerComponent
   ],
@@ -39,11 +36,6 @@ import { EditCustomerComponent } from './customer/edit-customer.component';
     ReactiveFormsModule,
     HttpClientModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

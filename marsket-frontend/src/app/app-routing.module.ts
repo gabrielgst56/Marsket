@@ -7,7 +7,6 @@ import { AddEmployeeComponent } from './employee/add-employee.component';
 import { ListEmployeeComponent } from './employee/list-employee.component';
 import { AddProductComponent } from './product/add-product.component';
 import { ListCustomerComponent } from './customer/list-customer.component';
-import { MenuComponent } from './menu/menu.component';
 import { EditCustomerComponent } from './customer/edit-customer.component';
 
 const routes: Routes = [
@@ -43,10 +42,6 @@ const routes: Routes = [
     {
         path: 'edit-customer',
         component: EditCustomerComponent
-    },
-    {
-        path: 'menu',
-        component: MenuComponent
     }
 ];
 

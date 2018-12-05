@@ -21,8 +21,8 @@ export class AddProductComponent implements OnInit {
     this.addForm = this.formBuilder.group({
       barCode: ['', Validators.required],
       name: ['', Validators.required],
-      price: [0.0, Validators.required],
-      quantity: [0, Validators.required],
+      price: ['', Validators.required],
+      quantity: ['', Validators.required],
       haveDiscount: []
     });
   }
@@ -50,13 +50,8 @@ export class AddProductComponent implements OnInit {
     );
 
     this.productService.addProduct(product)
-      .subscribe(data => {
-        this.router.navigate(['homepage'])
+      .subscribe(sucess => {
+        this.router.navigate(['list-product'])
       })
   }
-
-  return() {
-    this.router.navigate(['homepage']);
-  }
-
 }

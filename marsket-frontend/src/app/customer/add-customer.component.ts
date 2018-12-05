@@ -11,17 +11,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AddCustomerComponent implements OnInit {
 
-
-  constructor(private formBuilder: FormBuilder, private router: Router, private customerService: CustomerService) {
-
-  }
+  constructor(private formBuilder: FormBuilder, private router: Router, private customerService: CustomerService) { }
 
   submitted = false;
   customer: Customer;
   addForm: FormGroup;
 
   ngOnInit() {
-
     this.addForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -29,7 +25,6 @@ export class AddCustomerComponent implements OnInit {
       discount: []
     });
   }
-
 
   get f() { return this.addForm.controls; }
 
@@ -54,13 +49,8 @@ export class AddCustomerComponent implements OnInit {
 
     this.customerService.addCustomer(customer)
       .subscribe(data => {
-        this.router.navigate(['homepage']);
+        this.router.navigate(['list-customer']);
       });
   }
-
-  return() {
-    this.router.navigate(['homepage']);
-  }
-
 }
 

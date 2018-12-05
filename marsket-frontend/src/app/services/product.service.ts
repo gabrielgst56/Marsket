@@ -29,8 +29,8 @@ export class ProductService {
     return this.httpClient.put(`${this.API_URL}product/edit`, product, { headers: { 'Content-Type': 'application/json' } });
   }
 
-  deleteProduct(id: number) {
-    return this.httpClient.delete(`${this.API_URL}product/remove` + id);
+  delProduct(id: number) {
+    return this.httpClient.delete(`${this.API_URL}product/del/` + id);
   }
 
 }

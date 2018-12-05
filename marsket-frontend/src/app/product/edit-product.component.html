@@ -1,4 +1,4 @@
-<div class="add-product-holder">
+<div class="edit-product-holder">
   <div class="content-fluid">
     <section>
       <nav aria-label="breadcrumb">
@@ -14,7 +14,7 @@
           <li class="breadcrumb-item active" aria-current="page">New</li>
         </ol>
       </nav>
-      <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="form-product">
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="form-product">
         <div class="form-row">
           <div class="form-group col-sm-12 col-md-6">
             <input type="text" id="product-bar-code" formControlName="barCode" class="form-control" placeholder="Bar Corde"

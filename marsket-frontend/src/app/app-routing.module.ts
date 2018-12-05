@@ -8,6 +8,9 @@ import { ListEmployeeComponent } from './employee/list-employee.component';
 import { AddProductComponent } from './product/add-product.component';
 import { ListCustomerComponent } from './customer/list-customer.component';
 import { EditCustomerComponent } from './customer/edit-customer.component';
+import { ListProductComponent } from './product/list-product.component';
+import { EditEmployeeComponent } from './employee/edit-employee.component';
+import { EditProductComponent } from './product/edit-product.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -20,6 +23,18 @@ const routes: Routes = [
         component: HomepageComponent
     },
     {
+        path: 'list-product',
+        component: ListProductComponent
+    },
+    {
+        path: 'add-product',
+        component: AddProductComponent
+    },
+    {
+        path: 'edit-product',
+        component: EditProductComponent
+    },
+    {
         path: 'list-employee',
         component: ListEmployeeComponent
     },
@@ -28,8 +43,8 @@ const routes: Routes = [
         component: AddEmployeeComponent
     },
     {
-        path: 'add-product',
-        component: AddProductComponent
+        path: 'edit-employee',
+        component: EditEmployeeComponent
     },
     {
         path: 'list-customer',

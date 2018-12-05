@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule  } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
@@ -11,12 +11,12 @@ import { User } from '../models/user';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private  userService:  UserService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) {
 
   }
 
   submitted = false;
-  user:  User;
+  user: User;
   loginForm: FormGroup;
 
   ngOnInit() {
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
 
     if (this.loginForm.invalid) {
-        return;
+      return;
     }
 
     const user: User = new User(
@@ -44,10 +44,10 @@ export class LoginComponent implements OnInit {
     );
 
     this.userService.getLogin(user)
-    .subscribe(
-      data => {
-        this.router.navigate(['homepage']);
-    });
+      .subscribe(
+        data => {
+          this.router.navigate(['homepage']);
+        });
   }
 
 }

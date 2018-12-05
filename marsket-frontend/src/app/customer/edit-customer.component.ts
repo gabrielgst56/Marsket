@@ -11,9 +11,7 @@ import { Customer } from '../models/customer';
 })
 export class EditCustomerComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private customerService: CustomerService) {
-
-   }
+  constructor(private formBuilder: FormBuilder, private router: Router, private customerService: CustomerService) { }
 
   customer: Customer;
   editForm: FormGroup;
@@ -30,17 +28,16 @@ export class EditCustomerComponent implements OnInit {
     this.customer = this.customerService.customer;
 
     this.editForm.setValue({
-      firstName : this.customer.firstName,
-      lastName : this.customer.lastName,
-      cpf : this.customer.cpf,
-      discount : this.customer.haveDiscount
+      firstName: this.customer.firstName,
+      lastName: this.customer.lastName,
+      cpf: this.customer.cpf,
+      discount: this.customer.haveDiscount
     });
   }
 
   onSubmit() {
-
     if (this.editForm.invalid) {
-        return;
+      return;
     }
 
     this.customer.firstName = this.editForm.value.firstName;
@@ -50,13 +47,8 @@ export class EditCustomerComponent implements OnInit {
 
 
     this.customerService.editCustomer(this.customer)
-    .subscribe(
-      data => {
+      .subscribe(sucess => {
         this.router.navigate(['list-customer']);
       });
-  }
-
-  return() {
-    this.router.navigate(['list-customer']);
   }
 }

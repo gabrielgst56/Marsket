@@ -1,0 +1,53 @@
+<div class="list-product-holder">
+  <div class="content-fluid">
+    <section>
+      <nav aria-label="breadcrumb">
+        <p class="h2">Products</p>
+        <hr />
+        <ol class="breadcrumb" style="background-color: transparent; padding: 0px;">
+          <li class="breadcrumb-item">
+            <a [routerLink]="['/homepage']">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Products</li>
+        </ol>
+      </nav>
+      <div class="table-product">
+        <div style="margin-bottom: 20px;">
+          <button type="button" class="btn btn-dark fa fa-chevron-left" [routerLink]="['/homepage']">
+            <span>&nbsp;Return</span>
+          </button>
+          <button type="button" class="btn btn-primary fa fa-plus" style="margin-left: 20px;" [routerLink]="['/add-product']">
+            <span>&nbsp;New</span>
+          </button>
+        </div>
+        <div>
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Have discount for custommers?</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <th scope="row">{{product.id}}</th>
+                <td>{{product.name}}</td>
+                <td>{{'R$' + product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.haveDiscount ? 'Yes' : 'No'}}</td>
+                <td>
+                  <button type="button" class="btn btn-danger fa fa-trash" (click)="delProduct(product.id)"></button>
+                  <button type="button" class="btn btn-success fa fa-edit" (click)="editProduct(product)" style="margin-left: 20px;"></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

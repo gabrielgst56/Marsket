@@ -28,7 +28,7 @@ export class ListEmployeeComponent implements OnInit {
 
     public editEmployee(employee: Employee): void {
         this.employeesService.employee = employee;
-        this.router.navigate(['edit-employee']);    
+        this.router.navigate(['edit-employee']);
     }
 
     public delEmployee(id: number): void {

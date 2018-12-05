@@ -7,14 +7,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AddProductComponent } from './product/add-product.component';
 import { AddCustomerComponent } from './customer/add-customer.component';
 import { AddEmployeeComponent } from './employee/add-employee.component';
-import { ListEmployeeComponent } from './employee/list-employee.component';
+import { ListProductComponent } from './product/list-product.component';
 import { ListCustomerComponent } from './customer/list-customer.component';
-import { AddProductComponent } from './product/add-product.component';
-import { LayoutModule } from '@angular/cdk/layout';
+import { ListEmployeeComponent } from './employee/list-employee.component';
 import { DialogConfirmComponent } from './dialog/dialog-confirm.component';
+import { EditProductComponent } from './product/edit-product.component';
 import { EditCustomerComponent } from './customer/edit-customer.component';
+import { EditEmployeeComponent } from './employee/edit-employee.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { EditCustomerComponent } from './customer/edit-customer.component';
     ListCustomerComponent,
     AddProductComponent,
     DialogConfirmComponent,
-    EditCustomerComponent
+    EditCustomerComponent,
+    ListProductComponent,
+    EditEmployeeComponent,
+    EditProductComponent
   ],
   imports: [
     FormsModule,

@@ -11,12 +11,12 @@
           <li class="breadcrumb-item active" aria-current="page">Customers</li>
         </ol>
       </nav>
-      <div class="table-employee">
+      <div class="table-customer">
         <div style="margin-bottom: 20px;">
           <button type="button" class="btn btn-dark fa fa-chevron-left" [routerLink]="['/homepage']">
             <span>&nbsp;Return</span>
           </button>
-          <button type="button" class="btn btn-primary fa fa-plus" style="display:inline-block;" [routerLink]="['/add-customer']">
+          <button type="button" class="btn btn-primary fa fa-plus" style="margin-left: 20px;" [routerLink]="['/add-customer']">
             <span>&nbsp;New</span>
           </button>
         </div>
@@ -33,13 +33,13 @@
             </thead>
             <tbody>
               <tr *ngFor="let customer of customers">
-                <td scope="row">{{customer.id}}</td>
+                <th scope="row">{{customer.id}}</th>
                 <td>{{customer.cpf}}</td>
                 <td>{{customer.firstName + " " + customer.lastName}}</td>
                 <td>{{customer.haveDiscount ? 'Yes' : 'No'}}</td>
                 <td>
-                  <button type="button" class="btn btn-danger fa fa-trash" (click)="delCustomer(customer.id)">Delete</button>
-                  <button type="button" class="btn btn-info fa fa-edit" (click)="editCustomer(customer)" style="margin-left: 20px;">Edit</button>
+                  <button type="button" class="btn btn-danger fa fa-trash" (click)="delCustomer(customer.id)"></button>
+                  <button type="button" class="btn btn-success fa fa-edit" (click)="editCustomer(customer)" style="margin-left: 20px;"></button>
                 </td>
               </tr>
             </tbody>

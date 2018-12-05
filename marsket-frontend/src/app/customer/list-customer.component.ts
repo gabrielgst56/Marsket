@@ -4,9 +4,9 @@ import { CustomerService } from '../services/customer.service';
 import { Customer } from '../models/customer';
 
 @Component({
-  selector: 'app-list-customer',
-  templateUrl: './list-customer.component.html',
-  styleUrls: ['./list-customer.component.css']
+    selector: 'app-list-customer',
+    templateUrl: './list-customer.component.html',
+    styleUrls: ['./list-customer.component.css']
 })
 export class ListCustomerComponent implements OnInit {
 
@@ -15,28 +15,28 @@ export class ListCustomerComponent implements OnInit {
 
     constructor(private router: Router, private customerService: CustomerService) { }
 
-  ngOnInit() {
-      this.getCustomers();
-  }
-
-  public getCustomers() {
-      this.customerService.listCustomers()
-          .subscribe((data: Array<Customer>) => {
-              this.customers = data;
-          });
-  }
-
-  editCustomer(customer: Customer) {
-      this.customerService.customer = customer;
-      this.router.navigate(['edit-customer']);
+    ngOnInit() {
+        this.getCustomers();
     }
 
-  public addCustomer(): void {
-    this.router.navigate(['add-customer']);
-   }
+    public getCustomers() {
+        this.customerService.listCustomers()
+            .subscribe((data: Array<Customer>) => {
+                this.customers = data;
+            });
+    }
 
-   public delCustomer(id: number): void {
-    this.customerService.delCustomer(id)
-        .subscribe(sucess => { this.ngOnInit(); });
+    editCustomer(customer: Customer) {
+        this.customerService.customer = customer;
+        this.router.navigate(['edit-customer']);
+    }
+
+    public addCustomer(): void {
+        this.router.navigate(['add-customer']);
+    }
+
+    public delCustomer(id: number): void {
+        this.customerService.delCustomer(id)
+            .subscribe(sucess => { this.ngOnInit(); });
     }
 }

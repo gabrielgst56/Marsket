@@ -11,9 +11,7 @@ import { Employee } from '../models/employee';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private employeeService: EmployeeService) {
-
-  }
+  constructor(private formBuilder: FormBuilder, private router: Router, private employeeService: EmployeeService) { }
 
   submitted = false;
   employee: Employee;
@@ -46,9 +44,8 @@ export class AddEmployeeComponent implements OnInit {
     );
 
     this.employeeService.addEmployee(employee)
-      .subscribe(data => {
+      .subscribe(sucess => {
         this.router.navigate(['list-employee']);
       });
   }
-
 }

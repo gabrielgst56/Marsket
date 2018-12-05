@@ -3,7 +3,8 @@
     <h2 class="text-center">Add Product</h2>
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <input type="text" formControlName="barCode" placeholder="Bar Corde" class="form-control" id="barCode" [ngClass]="{ 'is-invalid': submitted && f.barCode.errors }">
+        <input type="text" formControlName="barCode" placeholder="Bar Corde" class="form-control" id="barCode"
+          [ngClass]="{ 'is-invalid': submitted && f.barCode.errors }">
         <div *ngIf="submitted && f.barCode.errors" class="invalid-feedback">
           <div *ngIf="f.barCode.errors.required">Bar Code name is required</div>
         </div>
@@ -17,15 +18,15 @@
       </div>
 
       <div class="form-group">
-        <input type="number" formControlName="price" placeholder="Price" class="form-control" id="price" [ngClass]="{ 'is-invalid': submitted && f.price.errors }"
-        />
+        <input type="number" formControlName="price" placeholder="Price" class="form-control" id="price" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
         <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
           <div *ngIf="f.price.errors.required">Price is required</div>
         </div>
       </div>
 
       <div class="form-group">
-        <input type="number" formControlName="quantity" placeholder="Quantity" class="form-control" id="salary" [ngClass]="{ 'is-invalid': submitted && f.salary.errors }">
+        <input type="number" formControlName="quantity" placeholder="Quantity" class="form-control" id="salary"
+          [ngClass]="{ 'is-invalid': submitted && f.salary.errors }">
         <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
           <div *ngIf="f.salary.errors.required">Quantity is required</div>
         </div>
@@ -33,8 +34,8 @@
 
       <div class="form-group">
         <label for="haveDiscount">Have discount?:</label>
-        <input style="margin-left: 20px;" type="checkbox" formControlName="haveDiscount" placeholder="discount" name="haveDiscount" class="form-check-input"
-          id="haveDiscount">
+        <input style="margin-left: 20px;" type="checkbox" formControlName="haveDiscount" placeholder="discount" name="haveDiscount"
+          class="form-check-input" id="haveDiscount">
       </div>
 
       <button class="btn btn-success">Confirm</button>

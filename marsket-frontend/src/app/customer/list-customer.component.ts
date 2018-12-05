@@ -28,7 +28,6 @@ export class ListCustomerComponent implements OnInit {
 
   editCustomer(customer: Customer) {
       this.customerService.customer = customer;
-
       this.router.navigate(['edit-customer']);
     }
 
@@ -36,10 +35,8 @@ export class ListCustomerComponent implements OnInit {
     this.router.navigate(['add-customer']);
    }
 
-   public delCustomer(customer: Customer): void {
-    this.customerService.delCustomer(customer.id)
-        .subscribe(data => {
-            this.router.navigate(['list-customer']);
-        });
+   public delCustomer(id: number): void {
+    this.customerService.delCustomer(id)
+        .subscribe(sucess => { this.ngOnInit(); });
     }
 }

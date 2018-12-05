@@ -5,28 +5,26 @@ import java.util.LinkedList;
 
 public class ProductRepository implements BaseRepository<Product> {
 
-	private LinkedList<Product> Products;
+    private LinkedList<Product> listProducts;
 
     public ProductRepository() {
-    	if(StaticRepository.initialize == false) {
-    		StaticRepository.initList();
-    	}
-    	
-    	Products = new LinkedList<>();
-        for(Product product : StaticRepository.listProduct) {
-        	Products.add(product);
+        if (StaticRepository.initialize == false) {
+            StaticRepository.initList();
         }
-    	
+        listProducts = new LinkedList<>();
+        StaticRepository.listProduct.forEach((product) -> {
+            listProducts.add(product);
+        });
     }
 
     @Override
     public LinkedList<Product> getAll() {
-        return this.Products;
+        return listProducts;
     }
 
     @Override
     public Product getObject(int id) {
-        for (Product product : StaticRepository.listProduct) {
+        for (Product product : listProducts) {
             if (product.getId() == id) {
                 return product;
             }
@@ -63,13 +61,13 @@ public class ProductRepository implements BaseRepository<Product> {
             }
         }
     }
-    
+
     //Não tenho certeza se o método ficaria aqui na repository ou na ProductBusiness
     public void setQuantity(int id, int quantity) {
-    	 for (Product product : StaticRepository.listProduct) {
-             if (product.getId() == id) {
-                 product.setQuantity(product.getQuantity() - quantity);
-             }
-         }
+        for (Product product : StaticRepository.listProduct) {
+            if (product.getId() == id) {
+                product.setQuantity(product.getQuantity() - quantity);
+            }
+        }
     }
 }

@@ -9,6 +9,9 @@ public class Product {
     private int quantity;
     private boolean haveDiscount;
 
+    public Product() {
+    }
+
     public Product(int id, String barCode, String name, Double price, int quantity, boolean haveDiscount) {
         this.id = id;
         this.barCode = barCode;

@@ -1,4 +1,3 @@
-
 export class Customer {
     constructor(
         public id: number,
@@ -6,7 +5,5 @@ export class Customer {
         public lastName: string,
         public cpf: string,
         public haveDiscount: boolean
-    ) {}
-
-
+    ) { }
 }

@@ -43,7 +43,7 @@ public class EmployeeController {
 
     @GET
     @Path("/get/{id}")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response getEmployee(@PathParam("id") int id) {
         try {
             String response = new GsonBuilder().setPrettyPrinting().create().toJson(new EmployeeBusiness().getEmployee(id));
@@ -56,10 +56,10 @@ public class EmployeeController {
     @POST
     @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response addEmployees(Employee employee) {
         try {
-            new EmployeeBusiness().AddEmployee(employee);
+            new EmployeeBusiness().insertEmployee(employee);
             return Response.ok().status(Status.OK).build();
         } catch (Exception ex) {
             return Response.serverError().status(400).build();
@@ -69,8 +69,8 @@ public class EmployeeController {
     @PUT
     @Path("/edit")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
-    public Response attEmployees(Employee employee) {
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response editEmployees(Employee employee) {
         try {
             new EmployeeBusiness().updateEmployee(employee);
             return Response.ok().status(Status.OK).build();
@@ -81,7 +81,7 @@ public class EmployeeController {
 
     @DELETE
     @Path("/del/{id}")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response delEmployees(@PathParam("id") int id) {
         try {
             new EmployeeBusiness().removeEmployee(id);

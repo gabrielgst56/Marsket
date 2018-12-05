@@ -5,13 +5,13 @@ import { Customer } from '../models/customer';
 @Injectable({
   providedIn: 'root'
 })
-export  class  CustomerService {
+export class CustomerService {
 
   public customer: Customer;
 
-  API_URL  =  'http://localhost:4200/api/marsket-backend/rest/';
+  API_URL = 'http://localhost:4200/api/marsket-backend/rest/';
 
-  constructor(private  httpClient:  HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   listCustomers() {
     return this.httpClient.get(`${this.API_URL}customer/list`);

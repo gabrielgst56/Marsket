@@ -22,68 +22,68 @@ import br.com.marsket.business.CustomerBusiness;
 @Path("/customer")
 public class CustomerController {
 
-	  	@GET
-	    @Path("/list")
-	    @Produces(MediaType.APPLICATION_JSON)
-	    public Response getCustomers() {
-	        try {
-	            String response = new Gson().toJson(new CustomerBusiness().getCustomers());
-	            return Response.status(200).entity(response).build();
-	            
-	        } catch (Exception ex) {
-	            return Response.serverError().status(400).build();
-	        }
-	    }
+    @GET
+    @Path("/list")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCustomers() {
+        try {
+            String response = new Gson().toJson(new CustomerBusiness().getCustomers());
+            return Response.status(200).entity(response).build();
 
-	    @GET
-	    @Path("/get/{id}")
-	    @Produces(MediaType.APPLICATION_JSON)
-	    public Response getCustomer(@PathParam("id") int id) {
-	        try {
-	            String response = new GsonBuilder().setPrettyPrinting().create().toJson(new CustomerBusiness().getCustomer(id));
-	            return Response.status(200).entity(response).build();
-	        } catch (Exception ex) {
-	            return Response.serverError().status(400).build();
-	        }
-	    }
+        } catch (Exception ex) {
+            return Response.serverError().status(400).build();
+        }
+    }
 
-	    @POST
-	    @Path("/add")
-	    @Produces(MediaType.APPLICATION_JSON)
-	    @Consumes(MediaType.APPLICATION_JSON)
-	    public Response addCustomer(Customer customer) {
-	        try {
-	            new CustomerBusiness().AddCustomer(customer);
-	            return Response.ok().status(Status.OK).build();
-	        } catch (Exception ex) {
-	            return Response.serverError().status(400).build();
-	        }
-	    }
+    @GET
+    @Path("/get/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCustomer(@PathParam("id") int id) {
+        try {
+            String response = new GsonBuilder().setPrettyPrinting().create().toJson(new CustomerBusiness().getCustomer(id));
+            return Response.status(200).entity(response).build();
+        } catch (Exception ex) {
+            return Response.serverError().status(400).build();
+        }
+    }
 
-	    @PUT
-	    @Path("/edit")
-	    @Produces(MediaType.APPLICATION_JSON)
-	    @Consumes(MediaType.APPLICATION_JSON)
-	    public Response attCustomer(Customer customer) {
-	        try {
-	            new CustomerBusiness().updateCustomer(customer);
-	            return Response.ok().status(Status.OK).build();
-	        } catch (Exception ex) {
-	            return Response.serverError().status(400).build();
-	        }
-	    }
+    @POST
+    @Path("/add")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addCustomer(Customer customer) {
+        try {
+            new CustomerBusiness().insertCustomer(customer);
+            return Response.ok().status(Status.OK).build();
+        } catch (Exception ex) {
+            return Response.serverError().status(400).build();
+        }
+    }
 
-	    @DELETE
-	    @Path("/del/{id}")
-	    @Produces(MediaType.APPLICATION_FORM_URLENCODED)
-	    @Consumes(MediaType.APPLICATION_JSON)
-	    public Response delCustomer(@PathParam("id") int id) {
-	    	System.out.println(id);
-	        try {
-	            new CustomerBusiness().removeCustomer(id);
-	            return Response.ok().status(Status.OK).build();
-	        } catch (JsonSyntaxException ex) {
-	            return Response.serverError().status(400).build();
-	        }
-	    }
+    @PUT
+    @Path("/edit")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response editCustomer(Customer customer) {
+        try {
+            new CustomerBusiness().updateCustomer(customer);
+            return Response.ok().status(Status.OK).build();
+        } catch (Exception ex) {
+            return Response.serverError().status(400).build();
+        }
+    }
+
+    @DELETE
+    @Path("/del/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response delCustomer(@PathParam("id") int id) {
+        System.out.println(id);
+        try {
+            new CustomerBusiness().removeCustomer(id);
+            return Response.ok().status(Status.OK).build();
+        } catch (JsonSyntaxException ex) {
+            return Response.serverError().status(400).build();
+        }
+    }
 }

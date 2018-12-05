@@ -1,33 +1,51 @@
 <div class="list-customer-holder">
-  <div class="content">
-    <h2>Customers</h2>
-    <br>
-    <button class="btn btn-primary" style="display:inline-block;" (click)="addCustomer()">New</button> <br>
-    <br>
-    <table class="table table-striped">
-      <thead class ="thead-dark">
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>CPF</th>
-          <th>Have discount?</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let customer of customers">
-          <td>{{customer.id}}</td>
-          <td>{{customer.firstName + " " + customer.lastName}}</td>
-          <td>{{customer.cpf}}</td>
-          <td>{{customer.haveDiscount ? 'Yes' : 'No'}}</td>
-          <td></td>
-          <td>
-            <button class="btn btn-danger" (click)="delCustomer(customer)">Delete</button>
-            <button class="btn btn-info" (click)="editCustomer(customer)" style="margin-left: 20px;">Edit</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="content-fluid">
+    <section>
+      <nav aria-label="breadcrumb">
+        <h2>Customers</h2>
+        <hr />
+        <ol class="breadcrumb" style="background-color: transparent; padding: 0px;">
+          <li class="breadcrumb-item">
+            <a [routerLink]="['/homepage']">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Customers</li>
+        </ol>
+      </nav>
+      <div class="table-employee">
+        <div style="margin-bottom: 20px;">
+          <button type="button" class="btn btn-dark fa fa-chevron-left" [routerLink]="['/homepage']">
+            <span>&nbsp;Return</span>
+          </button>
+          <button type="button" class="btn btn-primary fa fa-plus" style="display:inline-block;" [routerLink]="['/add-customer']">
+            <span>&nbsp;New</span>
+          </button>
+        </div>
+        <div>
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Name</th>
+                <th scope="col">Have discount?</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let customer of customers">
+                <td scope="row">{{customer.id}}</td>
+                <td>{{customer.cpf}}</td>
+                <td>{{customer.firstName + " " + customer.lastName}}</td>
+                <td>{{customer.haveDiscount ? 'Yes' : 'No'}}</td>
+                <td>
+                  <button type="button" class="btn btn-danger fa fa-trash" (click)="delCustomer(customer.id)">Delete</button>
+                  <button type="button" class="btn btn-info fa fa-edit" (click)="editCustomer(customer)" style="margin-left: 20px;">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
   </div>
 </div>

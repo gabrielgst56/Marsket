@@ -16,13 +16,13 @@ import br.com.marsket.model.Sale;
 @Path("/sale")
 public class SaleController {
 
-	@POST
+    @POST
     @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response addSale(Sale sale) {
         try {
-        	String response = new Gson().toJson(new SaleBusiness().AddSale(sale));
+            String response = new Gson().toJson(new SaleBusiness().AddSale(sale));
             return Response.status(200).entity(response).build();
         } catch (JsonSyntaxException ex) {
             return Response.serverError().status(400).build();

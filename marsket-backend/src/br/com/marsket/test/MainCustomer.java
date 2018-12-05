@@ -51,7 +51,7 @@ public class MainCustomer {
     	Customer customer = new Customer(4, true, "Thomas Erick", "Joaquim Farias", "63277321436");
     	CustomerBusiness ctrC = new CustomerBusiness();
     	LinkedList<Customer> customers = ctrC.getCustomers();
-    	ctrC.AddCustomer(customer);
+    	ctrC.insertCustomer(customer);
     	customers = ctrC.getCustomers();
     	
     	

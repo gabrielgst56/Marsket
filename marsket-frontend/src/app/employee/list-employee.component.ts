@@ -26,22 +26,13 @@ export class ListEmployeeComponent implements OnInit {
             });
     }
 
-    public getEmployee(employee: Employee): void {
-        this.employeesService.getEmployee(employee.id)
-            .subscribe((data: Employee) => {
-                this.employee = data;
-            });
+    public editEmployee(employee: Employee): void {
+        this.employeesService.employee = employee;
+        this.router.navigate(['edit-employee']);    
     }
 
     public delEmployee(id: number): void {
         this.employeesService.delEmployee(id)
             .subscribe(sucess => { this.ngOnInit(); });
-    }
-
-    public editEmployee(employee: Employee): void {
-        this.employeesService.editEmployee(employee)
-            .subscribe(data => {
-                this.router.navigate(['add-employee']);
-            });
     }
 }

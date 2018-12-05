@@ -1,4 +1,3 @@
-
 export class Product {
     constructor(
         public id: number,
@@ -7,7 +6,5 @@ export class Product {
         public price: number,
         public quantity: number,
         public haveDiscount: boolean
-    ) {}
-
-
+    ) { }
 }

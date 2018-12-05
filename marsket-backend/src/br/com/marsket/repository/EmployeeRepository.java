@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.marsket.repository;
 
 import br.com.marsket.model.Employee;
 import java.util.LinkedList;
 
-/**
- *
- * @author Pedro Leme
- */
 public class EmployeeRepository implements BaseRepository<Employee> {
 
     private LinkedList<Employee> listEmployee;
@@ -20,11 +11,10 @@ public class EmployeeRepository implements BaseRepository<Employee> {
         if (StaticRepository.initialize == false) {
             StaticRepository.initList();
         }
-
         listEmployee = new LinkedList<>();
-        for (Employee employee : StaticRepository.listEmployee) {
+        StaticRepository.listEmployee.forEach((employee) -> {
             listEmployee.add(employee);
-        }
+        });
     }
 
     @Override

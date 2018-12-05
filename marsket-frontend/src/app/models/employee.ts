@@ -1,4 +1,3 @@
-
 export class Employee {
     constructor(
         public id: number,
@@ -7,6 +6,4 @@ export class Employee {
         public cpf: string,
         public salary: number
     ) { }
-
-
 }

@@ -49,10 +49,10 @@ public class ProductController {
     @POST
     @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response addProduct(Product product) {
         try {
-            new ProductBusiness().AddProduct(product);
+            new ProductBusiness().insertProduct(product);
             return Response.ok().status(Status.OK).build();
         } catch (JsonSyntaxException ex) {
             return Response.serverError().status(400).build();
@@ -62,8 +62,8 @@ public class ProductController {
     @PUT
     @Path("/edit")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
-    public Response attProduct(Product product) {
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response editProduct(Product product) {
         try {
             new ProductBusiness().updateProduct(product);
             return Response.ok().status(Status.OK).build();
@@ -74,7 +74,7 @@ public class ProductController {
 
     @DELETE
     @Path("/del/{id}")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response delProduct(@PathParam("id") int id) {
         try {
             new ProductBusiness().removeProduct(id);

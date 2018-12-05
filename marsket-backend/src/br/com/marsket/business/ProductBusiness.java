@@ -14,7 +14,7 @@ public class ProductBusiness {
         return new ProductRepository().getObject(id);
     }
 
-    public void AddProduct(Product products) {
+    public void insertProduct(Product products) {
         new ProductRepository().insert(products);
     }
 

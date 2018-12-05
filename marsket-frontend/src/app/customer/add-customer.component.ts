@@ -45,11 +45,11 @@ export class AddCustomerComponent implements OnInit {
     }
 
     const customer: Customer = new Customer(
+      0,
       this.addForm.value.firstName,
       this.addForm.value.lastName,
       this.addForm.value.cpf,
-      this.addForm.value.discount,
-      this.addForm.value.id
+      this.addForm.value.discount
     );
 
     this.customerService.addCustomer(customer)

@@ -1,4 +1,5 @@
 package br.com.marsket.test;
+import br.com.marsket.business.CustomerBusiness;
 import br.com.marsket.controller.CustomerController;
 import br.com.marsket.controller.ProductController;
 import br.com.marsket.controller.SaleController;
@@ -47,7 +48,14 @@ public class MainCustomer {
     	
     	//System.out.println(re);
     	
-    	Customer customer = new Customer(1, true, "Thomas Erick", "Joaquim Farias", "63277321436");
+    	Customer customer = new Customer(4, true, "Thomas Erick", "Joaquim Farias", "63277321436");
+    	CustomerBusiness ctrC = new CustomerBusiness();
+    	LinkedList<Customer> customers = ctrC.getCustomers();
+    	ctrC.AddCustomer(customer);
+    	customers = ctrC.getCustomers();
+    	
+    	
+    	
     	ArrayList<Product> lst = new ArrayList<>();
     	Product produto = new Product (1, "12312156", "Porca de 10cm", 10.00, 2, false);
     	lst.add(produto);

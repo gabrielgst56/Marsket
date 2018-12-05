@@ -50,7 +50,7 @@ public class ProductController {
     @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response addEmployees(Product product) {
+    public Response addProduct(Product product) {
         try {
             new ProductBusiness().AddProduct(product);
             return Response.ok().status(Status.OK).build();
@@ -60,10 +60,10 @@ public class ProductController {
     }
 
     @PUT
-    @Path("/att")
+    @Path("/edit")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response attEmployees(Product product) {
+    public Response attProduct(Product product) {
         try {
             new ProductBusiness().updateProduct(product);
             return Response.ok().status(Status.OK).build();
@@ -75,7 +75,7 @@ public class ProductController {
     @DELETE
     @Path("/del/{id}")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response delEmployees(@PathParam("id") int id) {
+    public Response delProduct(@PathParam("id") int id) {
         try {
             new ProductBusiness().removeProduct(id);
             return Response.ok().status(Status.OK).build();

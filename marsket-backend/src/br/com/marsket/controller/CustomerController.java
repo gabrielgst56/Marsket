@@ -51,24 +51,24 @@ public class CustomerController {
 	    @Path("/add")
 	    @Produces(MediaType.APPLICATION_JSON)
 	    @Consumes(MediaType.APPLICATION_JSON)
-	    public Response addCustomer(@PathParam("customer") String jsonCustomer) {
+	    public Response addCustomer(Customer customer) {
 	        try {
-	            new CustomerBusiness().AddCustomer(new Gson().fromJson(jsonCustomer, Customer.class));
+	            new CustomerBusiness().AddCustomer(customer);
 	            return Response.ok().status(Status.OK).build();
-	        } catch (JsonSyntaxException ex) {
+	        } catch (Exception ex) {
 	            return Response.serverError().status(400).build();
 	        }
 	    }
 
 	    @PUT
-	    @Path("/att")
+	    @Path("/edit")
 	    @Produces(MediaType.APPLICATION_JSON)
 	    @Consumes(MediaType.APPLICATION_JSON)
-	    public Response attCustomer(@PathParam("customer") String jsonCustomer) {
+	    public Response attCustomer(Customer customer) {
 	        try {
-	        	new CustomerBusiness().updateCustomer(new Gson().fromJson(jsonCustomer, Customer.class));
+	            new CustomerBusiness().updateCustomer(customer);
 	            return Response.ok().status(Status.OK).build();
-	        } catch (JsonSyntaxException ex) {
+	        } catch (Exception ex) {
 	            return Response.serverError().status(400).build();
 	        }
 	    }

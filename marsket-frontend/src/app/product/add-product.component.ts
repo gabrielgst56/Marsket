@@ -23,7 +23,7 @@ export class AddProductComponent implements OnInit {
       name: ['', Validators.required],
       price: [0.0, Validators.required],
       quantity: [0, Validators.required],
-      discount: []
+      haveDiscount: []
     });
   }
 
@@ -36,8 +36,8 @@ export class AddProductComponent implements OnInit {
       return;
     }
 
-    if (this.addForm.value.discount == null) {
-      this.addForm.value.discount = false;
+    if (this.addForm.value.haveDiscount == null) {
+      this.addForm.value.haveDiscount = false;
     }
 
     const product: Product = new Product(
@@ -46,7 +46,7 @@ export class AddProductComponent implements OnInit {
       this.addForm.value.name,
       this.addForm.value.price,
       this.addForm.value.quantity,
-      this.addForm.value.discount
+      this.addForm.value.haveDiscount
     );
 
     this.productService.addProduct(product)

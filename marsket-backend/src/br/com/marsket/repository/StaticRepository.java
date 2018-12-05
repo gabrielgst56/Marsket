@@ -41,7 +41,7 @@ public class StaticRepository {
 			{
                 add(new Customer(modCount, true, "Thomas Erick", "Joaquim Farias", "63277321436"));
                 add(new Customer(modCount, false, "Vinicius Arthur", "Pedro Barros", "08108139554"));
-                add(new Customer(modCount, true, "Severino Geraldo", "F�bio Gon�alves", "21047352036"));
+                add(new Customer(modCount, true, "Severino Geraldo", "Fabop", "21047352036"));
             }
         };
 
@@ -68,7 +68,7 @@ public class StaticRepository {
 			{
                 add(new Product(modCount, "12312156", "Porca de 10cm", 10.00, 10, false));
                 add(new Product(modCount, "12421421", "Farinha", 10.99, 10, true));
-                add(new Product(modCount, "21345234", "�leo", 12.99, 15, true));
+                add(new Product(modCount, "21345234", "Oleo", 12.99, 15, true));
                 add(new Product(modCount, "42424246", "Macarrao", 12.99, 15, true));
             }
         };

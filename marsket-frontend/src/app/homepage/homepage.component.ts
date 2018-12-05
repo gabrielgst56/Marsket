@@ -25,7 +25,7 @@ export class HomepageComponent implements OnInit {
   }
 
   public deleteProduct(product: Product): void {
-    this.productsService.deleteProduct(product.Id)
+    this.productsService.deleteProduct(product.id)
       .subscribe(data => {
         this.getProducts();
       });

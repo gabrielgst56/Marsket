@@ -10,7 +10,6 @@ import javax.ws.rs.core.Response;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
-import br.com.marsket.business.ProductBusiness;
 import br.com.marsket.business.SaleBusiness;
 import br.com.marsket.model.Sale;
 

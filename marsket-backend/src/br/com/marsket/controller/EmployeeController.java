@@ -67,7 +67,7 @@ public class EmployeeController {
     }
 
     @PUT
-    @Path("/att")
+    @Path("/edit")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Response attEmployees(Employee employee) {

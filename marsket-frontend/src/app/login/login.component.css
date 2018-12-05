@@ -20,9 +20,6 @@
     margin: 0 auto;
 }
 
-.loginButton {
-    margin-left: 133px;
-}
 
 @keyframes example {
     from {background-color: #3f2b96;}

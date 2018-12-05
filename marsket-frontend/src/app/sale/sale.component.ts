@@ -24,6 +24,7 @@ export class SaleComponent implements OnInit {
     this.createForm = this.formBuilder.group({
       barCode: ['', Validators.required],
       quantity: ['', Validators.required],
+      customerCpf: [''],
       totalPrice: ['', Validators.required],
       employee: ['', Validators.required],
       haveDiscount: []

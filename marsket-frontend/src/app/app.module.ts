@@ -18,6 +18,7 @@ import { EditProductComponent } from './product/edit-product.component';
 import { EditCustomerComponent } from './customer/edit-customer.component';
 import { EditEmployeeComponent } from './employee/edit-employee.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { SaleComponent } from './sale/sale.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     EditCustomerComponent,
     ListProductComponent,
     EditEmployeeComponent,
-    EditProductComponent
+    EditProductComponent,
+    SaleComponent
   ],
   imports: [
     FormsModule,

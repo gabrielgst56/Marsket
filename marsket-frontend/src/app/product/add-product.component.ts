@@ -13,7 +13,6 @@ export class AddProductComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private router: Router, private productService: ProductService) { }
 
-  submitted = false
   product: Product;
   addForm: FormGroup;
 
@@ -30,7 +29,6 @@ export class AddProductComponent implements OnInit {
   get f() { return this.addForm.controls; }
 
   onSubmit() {
-    this.submitted = true;
 
     if (this.addForm.invalid) {
       return;
@@ -51,7 +49,7 @@ export class AddProductComponent implements OnInit {
 
     this.productService.addProduct(product)
       .subscribe(sucess => {
-        this.router.navigate(['list-product'])
-      })
+        this.router.navigate(['list-product']);
+      });
   }
 }

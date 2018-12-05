@@ -10,9 +10,9 @@
 }
 
 .content{
-    width: 400px;
-    max-height: 400px;
-    padding: 50px;    
+    min-width: 400px;
+    min-height: 288px; 
+    padding: 20px;    
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     border-bottom: 7px solid #33a4c9;
@@ -21,7 +21,7 @@
 }
 
 .loginButton {
-    background: linear-gradient(to right, #02aab0, #00cdac);
+    margin-left: 124px;
 }
 
 @keyframes example {

@@ -2,6 +2,7 @@ package br.com.marsket.business;
 
 import br.com.marsket.model.Product;
 import br.com.marsket.repository.ProductRepository;
+import br.com.marsket.repository.StaticRepository;
 import java.util.LinkedList;
 
 public class ProductBusiness {
@@ -14,8 +15,14 @@ public class ProductBusiness {
         return new ProductRepository().getObject(id);
     }
 
-    public void insertProduct(Product products) {
-        new ProductRepository().insert(products);
+    public void insertProduct(Product product) {
+        for (Product prod : StaticRepository.listProduct) {
+            if (prod.getBarCode().equals(product.getBarCode())) {
+                prod.setQuantity(prod.getQuantity() + product.getQuantity());
+                return;
+            }
+        }
+        new ProductRepository().insert(product);
     }
 
     public void updateProduct(Product products) {

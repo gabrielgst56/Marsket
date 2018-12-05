@@ -11,6 +11,7 @@ import { EditCustomerComponent } from './customer/edit-customer.component';
 import { ListProductComponent } from './product/list-product.component';
 import { EditEmployeeComponent } from './employee/edit-employee.component';
 import { EditProductComponent } from './product/edit-product.component';
+import { SaleComponent } from './sale/sale.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -57,6 +58,10 @@ const routes: Routes = [
     {
         path: 'edit-customer',
         component: EditCustomerComponent
+    },
+    {
+        path: 'create-sale',
+        component: SaleComponent
     }
 ];
 

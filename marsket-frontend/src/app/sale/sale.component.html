@@ -1,0 +1,56 @@
+<div class="add-product-holder">
+  <div class="content-fluid">
+    <section>
+      <nav aria-label="breadcrumb">
+        <p class="h2">New Sale</p>
+        <hr />
+        <ol class="breadcrumb" style="background-color: transparent; padding: 0px;">
+          <li class="breadcrumb-item">
+            <a [routerLink]="['/homepage']">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Sale</li>
+        </ol>
+      </nav>
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="form-product">
+        <div class="form-row">
+          <div class="form-group col-sm-12 col-md-6">
+            <input type="text" id="product-bar-code" formControlName="barCode" class="form-control" placeholder="Bar Corde"
+              [ngClass]="{ 'is-invalid': submitted && f.barCode.errors }">
+            <div *ngIf="submitted && f.barCode.errors" class="invalid-feedback">
+              <div *ngIf="f.barCode.errors.required">Bar Code is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-sm-12 col-md-4">
+            <input type="number" id="product-quantity" formControlName="quantity" class="form-control" placeholder="Quantity"
+              style="text-align: center;" min="0" [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }">
+            <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
+              <div *ngIf="f.quantity.errors.required">Quantity is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-sm-12 col-md-6">
+            <span>Total price:</span>
+            <input type="text" id="total-price" formControlName="totalPrice" class="form-control" disabled>
+          </div>
+          
+          <div class="form-group col-sm-12 col-md-6">
+              <span>Employee:</span>
+              <input type="text" id="employee" formControlName="employee" class="form-control" disabled>
+            </div>             
+        </div>
+
+        <button type="button|submit" class="btn btn-success float-right" style="margin-left: 15px;">
+          <span>Confirm</span>
+        </button>
+        <button type="button|reset" class="btn btn-danger float-right" [routerLink]="['/list-product']">
+          <span>Cancel</span>
+        </button>
+      </form>
+    </section>
+  </div>
+</div>

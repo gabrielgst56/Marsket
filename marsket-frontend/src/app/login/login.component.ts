@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
     this.userService.getLogin(user)
       .subscribe(
         data => {
+          this.userService.user = user;
           this.router.navigate(['homepage']);
         });
   }

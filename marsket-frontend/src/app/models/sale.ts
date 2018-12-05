@@ -1,6 +1,6 @@
-import { Employee } from "./employee";
-import { Customer } from "./customer";
-import { Product } from "./product";
+import { Employee } from './employee';
+import { Customer } from './customer';
+import { Product } from './product';
 
 export class Sale {
     constructor(

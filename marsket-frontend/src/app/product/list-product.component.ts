@@ -10,7 +10,7 @@ import { Product } from '../models/product';
 })
 export class ListProductComponent implements OnInit {
 
-  private products: Array<object> = []
+  private products: Array<object> = [];
   private product: Product;
 
   constructor(private router: Router, private productService: ProductService) { }

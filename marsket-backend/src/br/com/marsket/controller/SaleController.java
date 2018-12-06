@@ -1,5 +1,6 @@
 package br.com.marsket.controller;
 
+import br.com.marsket.business.EmployeeBusiness;
 import br.com.marsket.business.ProductBusiness;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -39,6 +40,18 @@ public class SaleController {
     public Response getProductBarCode(@PathParam("barCode") String barCode, @PathParam("quantity") int quantity) {
         try {
             String response = new Gson().toJson(new ProductBusiness().getProductSale(barCode, quantity));
+            return Response.status(200).entity(response).build();
+        } catch (Exception ex) {
+            return Response.serverError().status(400).build();
+        }
+    }
+
+    @GET
+    @Path("/get/employee/{cpf}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getProductBarCode(@PathParam("cpf") String cpf) {
+        try {
+            String response = new Gson().toJson(new EmployeeBusiness().getEmployeeSale(cpf));
             return Response.status(200).entity(response).build();
         } catch (Exception ex) {
             return Response.serverError().status(400).build();

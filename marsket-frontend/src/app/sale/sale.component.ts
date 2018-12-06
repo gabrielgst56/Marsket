@@ -48,7 +48,20 @@ export class SaleComponent implements OnInit {
   public addProduct() {
     this.saleService.getProduct(this.createForm.value.barCode, this.createForm.value.quantity)
       .subscribe((data: Product) => {
-        this.products.push(data);
+        if (data != null) {
+          this.products.push(data);
+          this.createForm.value.totalPrice = data.price * data.quantity;
+        }
       });
+  }
+
+  public getCustomer() {
+    this.saleService.getCustomer(this.createForm.value.customerCpf)
+      .subscribe((data: Employee) => {
+        if (data != null) {
+          this.employee = data;
+        }
+      });
+
   }
 }

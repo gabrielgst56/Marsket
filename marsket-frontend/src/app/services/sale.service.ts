@@ -36,4 +36,8 @@ export class SaleService {
     getProduct(barCode: string, quantity: number) {
         return this.httpClient.get(`${this.API_URL}sale/get/product/${barCode}/${quantity}`);
     }
+
+    getCustomer(cpf: string) {
+        return this.httpClient.get(`${this.API_URL}sale/get/customer/` + cpf);
+    }
 }

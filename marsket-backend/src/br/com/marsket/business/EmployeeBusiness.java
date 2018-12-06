@@ -14,6 +14,15 @@ public class EmployeeBusiness {
         return new EmployeeRepository().getObject(id);
     }
 
+    public Employee getEmployeeSale(String cpf) {
+        for (Employee emp : getEmployees()) {
+            if (emp.getCpf().equals(cpf)) {
+                return emp;
+            }
+        }
+        return null;
+    }
+
     public void insertEmployee(Employee employee) {
         new EmployeeRepository().insert(employee);
     }

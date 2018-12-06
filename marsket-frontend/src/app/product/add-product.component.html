@@ -17,10 +17,10 @@
       <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="form-product">
         <div class="form-row">
           <div class="form-group col-sm-12 col-md-6">
-            <input type="text" id="product-bar-code" formControlName="barCode" class="form-control" placeholder="Bar Corde"
+            <input type="text" id="product-bar-code" formControlName="barCode" class="form-control" placeholder="Corde"
               [ngClass]="{ 'is-invalid': submitted && f.barCode.errors }">
             <div *ngIf="submitted && f.barCode.errors" class="invalid-feedback">
-              <div *ngIf="f.barCode.errors.required">Bar Code name is required</div>
+              <div *ngIf="f.barCode.errors.required">Code is required</div>
             </div>
           </div>
 

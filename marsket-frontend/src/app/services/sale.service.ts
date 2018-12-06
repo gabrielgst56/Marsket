@@ -32,4 +32,8 @@ export class SaleService {
     delSale(id: number) {
         return this.httpClient.delete(`${this.API_URL}sale/del/` + id);
     }
+
+    getProduct(barCode: string) {
+        return this.httpClient.get(`${this.API_URL}sale/get/product/` + barCode);
+    }
 }

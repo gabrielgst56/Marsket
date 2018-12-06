@@ -11,31 +11,38 @@
           <li class="breadcrumb-item active" aria-current="page">Sale</li>
         </ol>
       </nav>
-      <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="form-sale">
+      <form [formGroup]="createForm" (ngSubmit)="onSubmit()" class="form-sale">
         <div class="form-row">
-          <div class="form-group col-sm-12 col-md-6">
-            <input type="text" id="product-bar-code" formControlName="barCode" class="form-control" placeholder="Bar Corde"
+          <div class="form-group col-sm-12 col-md-4">
+            <input type="text" id="sale-cpf" formControlName="customerCpf" class="form-control" placeholder="Customer CPF"
               [ngClass]="{ 'is-invalid': submitted && f.barCode.errors }">
-            <div *ngIf="submitted && f.barCode.errors" class="invalid-feedback">
-              <div *ngIf="f.barCode.errors.required">Bar Code is required</div>
-            </div>
           </div>
           <div class="form-group col-sm-12 col-md-4">
-            <input type="number" id="product-quantity" formControlName="quantity" class="form-control" placeholder="Quantity"
+            <input type="text" id="sale-bar-code" formControlName="barCode" class="form-control" placeholder="Code Product"
+              [ngClass]="{ 'is-invalid': submitted && f.barCode.errors }">
+            <div *ngIf="submitted && f.barCode.errors" class="invalid-feedback">
+              <div *ngIf="f.barCode.errors.required">Code is required</div>
+            </div>
+          </div>
+          <div class="form-group col-sm-10 col-md-3">
+            <input type="number" id="sale-quantity" formControlName="quantity" class="form-control" placeholder="Quantity"
               style="text-align: center;" min="0" [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }">
             <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
               <div *ngIf="f.quantity.errors.required">Quantity is required</div>
             </div>
-          </div>          
-          <button type="button" class="btn btn-primary fa fa-plus" style="margin-left: 20px; height: 38px !important;" (click)="addProduct()">
-            <span>&nbsp;Add</span>
-          </button>
+          </div>
+          <div class="form-group col-sm-2 col-md-1">
+            <button type="button" class="btn btn-primary fa fa-plus" style="height: 38px !important;" (click)="addProduct(barCode)">
+              <span>&nbsp;Add</span>
+            </button>
+          </div>
         </div>
 
         <div class="form-row">
-        <table class="table table-striped">
+          <table class="table table-striped">
             <thead class="thead">
               <tr>
+                <th scope="col">BarCode</th>
                 <th scope="col">Description</th>
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
@@ -43,6 +50,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let product of products">
+                <td>{{product.barCode}}</td>
                 <td>{{product.name}}</td>
                 <td>{{'R$' + product.price}}</td>
                 <td>{{product.quantity}}</td>
@@ -51,25 +59,18 @@
           </table>
         </div>
 
-
-        <div class="form-row">
-            <div class="form-group col-sm-12 col-md-6">
-                <input type="text" id="customer-cpf" formControlName="customerCpf" class="form-control" placeholder="Customer CPF"
-                  [ngClass]="{ 'is-invalid': submitted && f.barCode.errors }">
-              </div>
-        </div>
         <!-- Aqui vai ficar uma table mostrando os produtos adicionados a sale-->
 
         <div class="form-row">
           <div class="form-group col-sm-12 col-md-6">
             <span>Total price:</span>
-            <input type="text" id="total-price" formControlName="totalPrice" class="form-control" disabled>
+            <input type="text" id="sale-total-price" formControlName="totalPrice" class="form-control" disabled>
           </div>
-          
+
           <div class="form-group col-sm-12 col-md-6">
-              <span>Employee:</span>
-              <input type="text" id="employee" formControlName="employee" class="form-control" disabled>
-            </div>             
+            <span>Employee:</span>
+            <input type="text" id="sale-employee" formControlName="employee" class="form-control" disabled>
+          </div>
         </div>
 
         <button type="button|submit" class="btn btn-success float-right" style="margin-left: 15px;">

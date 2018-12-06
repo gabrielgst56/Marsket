@@ -15,6 +15,10 @@ public class ProductBusiness {
         return new ProductRepository().getObject(id);
     }
 
+    public Product getProductBarCode(String barCode) {
+        return new ProductRepository().getProduct(barCode);
+    }
+
     public void insertProduct(Product product) {
         for (Product prod : StaticRepository.listProduct) {
             if (prod.getBarCode().equals(product.getBarCode())) {

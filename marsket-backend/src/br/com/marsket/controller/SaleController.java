@@ -1,5 +1,6 @@
 package br.com.marsket.controller;
 
+import br.com.marsket.business.ProductBusiness;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -12,6 +13,9 @@ import com.google.gson.JsonSyntaxException;
 
 import br.com.marsket.business.SaleBusiness;
 import br.com.marsket.model.Sale;
+import com.google.gson.GsonBuilder;
+import javax.ws.rs.GET;
+import javax.ws.rs.PathParam;
 
 @Path("/sale")
 public class SaleController {
@@ -29,4 +33,15 @@ public class SaleController {
         }
     }
 
+    @GET
+    @Path("/get/product/{barCode}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getProductBarCode(@PathParam("barCode") String barCode) {
+        try {
+            String response = new Gson().toJson(new ProductBusiness().getProductBarCode(barCode));
+            return Response.status(200).entity(response).build();
+        } catch (Exception ex) {
+            return Response.serverError().status(400).build();
+        }
+    }
 }

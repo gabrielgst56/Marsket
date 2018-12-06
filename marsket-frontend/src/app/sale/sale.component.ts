@@ -6,6 +6,7 @@ import { Employee } from '../models/employee';
 import { UserService } from '../services/user.service';
 import { SaleService } from '../services/sale.service';
 import { Product } from '../models/product';
+import { Customer } from '../models/customer';
 
 @Component({
   selector: 'app-sale',
@@ -19,19 +20,20 @@ export class SaleComponent implements OnInit {
 
   products: Array<object> = [];
   employee: Employee;
+  customer: Customer;
   user: User;
   createForm: FormGroup;
+  product: Product;
+  discountAppplied: Boolean;
 
   ngOnInit() {
-    this.products.push(new Product(0, '123', '123', 1, 1, true));
-    this.products.push(new Product(2, '123', '123', 1, 1, true));
-    this.products.push(new Product(3, '123', '123', 1, 1, true));
     this.createForm = this.formBuilder.group({
       barCode: ['', Validators.required],
       quantity: ['', Validators.required],
       customerCpf: [''],
       totalPrice: ['', Validators.required],
-      employee: ['', Validators.required]
+      employee: ['', Validators.required],
+      customer: ['', Validators.required]
     });
 
     this.user = this.userService.user;
@@ -41,7 +43,8 @@ export class SaleComponent implements OnInit {
       quantity: '',
       customerCpf: '',
       totalPrice: 0,
-      employee: this.user.Login
+      employee: this.user.Login,
+      customer: ''
     });
   }
 
@@ -50,16 +53,36 @@ export class SaleComponent implements OnInit {
       .subscribe((data: Product) => {
         if (data != null) {
           this.products.push(data);
-          this.createForm.value.totalPrice = data.price * data.quantity;
+          this.createForm.setValue({
+            barCode: '',
+            quantity: '',
+            customerCpf: this.createForm.value.customerCpf,
+            totalPrice: (data.price * data.quantity) + this.createForm.value.totalPrice,
+            employee: this.createForm.value.employee,
+            customer: this.createForm.value.customer
+          });
         }
       });
   }
 
   public getCustomer() {
     this.saleService.getCustomer(this.createForm.value.customerCpf)
-      .subscribe((data: Employee) => {
+      .subscribe((data: Customer) => {
         if (data != null) {
-          this.employee = data;
+
+          let totalPrice = this.createForm.value.totalPrice;
+          if (!this.discountAppplied && data.haveDiscount) {
+            this.discountAppplied = true;
+            totalPrice = totalPrice * 0.9;
+          }
+          this.createForm.setValue({
+            barCode: '',
+            quantity: '',
+            customerCpf: data.cpf,
+            totalPrice: totalPrice,
+            employee: this.createForm.value.employee,
+            customer: data.firstName + ' ' + data.lastName
+          });
         }
       });
 

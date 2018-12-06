@@ -1,5 +1,6 @@
 package br.com.marsket.controller;
 
+import br.com.marsket.business.CustomerBusiness;
 import br.com.marsket.business.EmployeeBusiness;
 import br.com.marsket.business.ProductBusiness;
 import javax.ws.rs.Consumes;
@@ -47,11 +48,11 @@ public class SaleController {
     }
 
     @GET
-    @Path("/get/employee/{cpf}")
+    @Path("/get/customer/{cpf}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getProductBarCode(@PathParam("cpf") String cpf) {
+    public Response getCustomerCpf(@PathParam("cpf") String cpf) {
         try {
-            String response = new Gson().toJson(new EmployeeBusiness().getEmployeeSale(cpf));
+            String response = new Gson().toJson(new CustomerBusiness().getCustomerSale(cpf));
             return Response.status(200).entity(response).build();
         } catch (Exception ex) {
             return Response.serverError().status(400).build();

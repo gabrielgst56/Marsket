@@ -38,6 +38,6 @@ export class SaleService {
     }
 
     getCustomer(cpf: string) {
-        return this.httpClient.get(`${this.API_URL}sale/get/customer/` + cpf);
+        return this.httpClient.get(`${this.API_URL}sale/get/customer/${cpf}`);
     }
 }

@@ -14,6 +14,15 @@ public class CustomerBusiness {
         return new CustomerRepository().getObject(id);
     }
 
+    public Customer getCustomerSale(String cpf) {
+        for (Customer customer : getCustomers()) {
+            if (customer.getCpf().equals(cpf)) {
+                return customer;
+            }
+        }
+        return null;
+    }
+
     public void insertCustomer(Customer customer) {
         new CustomerRepository().insert(customer);
     }

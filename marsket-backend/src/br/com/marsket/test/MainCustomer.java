@@ -63,7 +63,7 @@ public class MainCustomer {
         ProductController control2 = new ProductController();
         Response re2 = control2.getProduct(1);*/
         SaleController controle = new SaleController();
-        System.out.println(controle.getProductBarCode("12312156"));
+        System.out.println(controle.getProductBarCode("12312156", 1).getEntity());
     }
 
 }

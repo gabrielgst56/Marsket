@@ -34,11 +34,11 @@ public class SaleController {
     }
 
     @GET
-    @Path("/get/product/{barCode}")
+    @Path("/get/product/{barCode}/{quantity}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getProductBarCode(@PathParam("barCode") String barCode) {
+    public Response getProductBarCode(@PathParam("barCode") String barCode, @PathParam("quantity") int quantity) {
         try {
-            String response = new Gson().toJson(new ProductBusiness().getProductBarCode(barCode));
+            String response = new Gson().toJson(new ProductBusiness().getProductSale(barCode, quantity));
             return Response.status(200).entity(response).build();
         } catch (Exception ex) {
             return Response.serverError().status(400).build();

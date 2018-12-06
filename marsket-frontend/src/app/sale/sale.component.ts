@@ -45,8 +45,8 @@ export class SaleComponent implements OnInit {
     });
   }
 
-  public addProduct(barCode: string) {
-    this.saleService.getProduct(barCode)
+  public addProduct() {
+    this.saleService.getProduct(this.createForm.value.barCode, this.createForm.value.quantity)
       .subscribe((data: Product) => {
         this.products.push(data);
       });

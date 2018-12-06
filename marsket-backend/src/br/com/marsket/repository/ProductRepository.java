@@ -32,15 +32,6 @@ public class ProductRepository implements BaseRepository<Product> {
         return null;
     }
 
-    public Product getProduct(String barCode) {
-        for (Product prod : listProducts) {
-            if (prod.getBarCode().equals(barCode)) {
-                return prod;
-            }
-        }
-        return null;
-    }
-
     @Override
     public void insert(Product m) {
         if (!StaticRepository.listProduct.isEmpty()) {

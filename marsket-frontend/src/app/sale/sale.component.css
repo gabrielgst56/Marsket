@@ -1,6 +1,6 @@
 .create-sale-holder {
     height: 100vh;
-    background-color: rgb(240, 244, 245);
+    background: linear-gradient(to right, #8e0e00, #1f1c18);
 }
 
 .form-sale{

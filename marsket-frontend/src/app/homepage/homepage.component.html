@@ -1,29 +1,20 @@
 <div class="homepage-holder">
   <div class="content-fluid">
     <section>
-      <nav aria-label="breadcrumb">
-        <p class="h2">Homepage</p>
-        <hr />
-      </nav>
       <div class="card-group">
-          <div class="card" [routerLink]="['/sale']">
-            <div class="card-body">
-              <h5 class="card-title">Sales</h5>
-            </div>
-        </div>
-          <div class="card" [routerLink]="['/list-product']" style="margin-left: 20px;">
+          <div class="card" [routerLink]="['/list-product']" style="border-radius: 5px;">
             <div class="card-body">
               <h5 class="card-title">Products</h5>
             </div>
         </div>
         </div>
         <div class="card-group">
-          <div class="card" [routerLink]="['/list-employee']">
+          <div class="card" [routerLink]="['/list-employee']" style="border-radius: 5px;">
             <div class="card-body">
               <h5 class="card-title">Employees</h5>
             </div>
         </div>
-          <div class="card" [routerLink]="['/list-customer']" style="margin-left: 20px;">
+          <div class="card" [routerLink]="['/list-customer']" style="margin-left: 20px; border-radius: 5px;">
             <div class="card-body">
               <h5 class="card-title">Customers</h5>
             </div>
@@ -31,7 +22,7 @@
       </div>
       
       <div class="card-group">
-        <div class="card" [routerLink]="['/create-sale']" style="border-bottom:7px solid #c471ed !important;">
+        <div class="card" [routerLink]="['/create-sale']" style="border-bottom:7px solid #c471ed !important; border-radius: 5px;">
           <div class="card-body">
             <h5 class="card-title">Begin sale</h5>
           </div>

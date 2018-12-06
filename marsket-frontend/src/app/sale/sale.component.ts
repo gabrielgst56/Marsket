@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { User } from '../models/user';
 import { Employee } from '../models/employee';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-sale',
@@ -12,7 +13,8 @@ import { Employee } from '../models/employee';
 })
 export class SaleComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private productService: ProductService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private productService: ProductService
+    , private userService: UserService) { }
 
   products: Array<object> = [];
   employee: Employee;
@@ -20,6 +22,7 @@ export class SaleComponent implements OnInit {
   createForm: FormGroup;
 
   ngOnInit() {
+    debugger; 
 
     this.createForm = this.formBuilder.group({
       barCode: ['', Validators.required],
@@ -30,6 +33,15 @@ export class SaleComponent implements OnInit {
       haveDiscount: []
     });
 
+    this.user = this.userService.user;
+
+    this.createForm.setValue({
+      barcode : '',
+      quantity : '',
+      customercpf : '',
+      total
+      employee : this.user.Login
+    });
   }
 
 }

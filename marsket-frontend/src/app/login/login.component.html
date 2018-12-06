@@ -1,7 +1,7 @@
 <div class="login-holder">
   <div class="content">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <img class="card-img-top" src="../../assets/logo.PNG" style="max-width: 100px; max-height: 100px; margin-left: 121px;">
+      <img class="card-img-top" src="../../assets/logo.PNG" style="max-width: 100px; max-height: 100px; margin-left: 121px; margin-bottom: 5px;">
       <div class="form-group">
         <input formControlName="username" type="text" class="form-control" aria-describedby="username" placeholder="Username"
           [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />

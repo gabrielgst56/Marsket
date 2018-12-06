@@ -43,10 +43,11 @@ export class LoginComponent implements OnInit {
       null,
     );
 
+    this.userService.user = user;
+
     this.userService.getLogin(user)
       .subscribe(
         data => {
-          this.userService.user = user;
           this.router.navigate(['homepage']);
         });
   }

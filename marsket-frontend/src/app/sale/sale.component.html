@@ -2,13 +2,13 @@
   <div class="content-fluid">
     <section>
       <nav aria-label="breadcrumb">
-        <p class="h2">New Sale</p>
+        <p class="h2" style="color:white">New Sale</p>
         <hr />
         <ol class="breadcrumb" style="background-color: transparent; padding: 0px;">
           <li class="breadcrumb-item">
             <a [routerLink]="['/homepage']">Home</a>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">Sale</li>
+          <li class="breadcrumb-item active" aria-current="page" style="color:white">Sale</li>
         </ol>
       </nav>
       <form [formGroup]="createForm" (ngSubmit)="onSubmit()" class="form-sale">
